@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            .class1 { color: red} 
+            h2 { color: blue; text-decoration: overline;}
+            .class1 .text-deco { color: green; text-shadow: 3px 1px 1px #000000;}
+            #value1 {}
+            #value1:hover {
+                cursor: pointer;
+            }
+            span { 
+                color: orange;
+                font-size:large;
+                font-weight: bold;
+            }
+            hr {
+                border: 10px;
+                border-style: dotted;
+            }
+            p {
+                background-color: aqua;
+            }
+            img {
+                width: 100px;
+                height: 100px;
+                cursor: pointer;
+            }
+            div{
+                background-color: bisque;
+                border-radius: 50px;
+                width: 100px;
+                height: 100px;
+                border: 3px red solid;
+            }
+            /* 하위(자식)선택자 : 내 바로 하위 태그  선택 */
+            /* body > div {
+
+            } */
+            /*  + */
+            /* 일반 형제 선택자 : ~ */
+            /* 가상 선택자 -> E::active, E::after 등등 */
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <p>
+                <div>
+                    <div></div>
+                </div>
+            </p>
+        </div>
+        <h1 class="class1">제목1</h1>
+        <h2>제목2</h2>
+        <h3 class="class1 text-deco">제목3</h3>
+        <h3 class="class1 text-deco">제목3</h3>
+        <h3 class="class1 text-deco">제목3</h3>
+        <h4 id="value1">제목4</h4>
+        <h5>제목5</h5>
+        <h6>제목6</h6>
+        <span>span태그입니다.</span>
+        <hr>
+        <p>p태그그입니다.</p>
+
+        <img src="./cat.jpg">
+
+        <div></div>
+    </body>
+</html>
