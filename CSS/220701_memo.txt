@@ -8,3 +8,40 @@
 
 4. animation
 
+* Javascript 
+
+<script>
+	코드 작성//
+</script>
+
+함수 
+
+function hello() { }
+
+function : 키워드
+hello : name. 함수이름
+() : 
+{ } : body -> 함수가 실행되는 Scope 라고도 함
+
+함수 선언 방식
+1) 명시적 함수 선언
+: ex)  function hello() { }
+2) 함수 표현식
+: 변수에 함수를 담는다
+ex) 
+
+변수 :  데이터를 담을 수 있음 / 고정값이 아님, 값이 변할 수 있음
+
+변수 선언
+
+-> 키워드와 변수이름 작성
+
+- 삼항 연산자
+조건? 참일 때의 실행 : 거짓일 때의 실행
+-> 리액트에 많이 쓰임
+
+-- 반복문
+
+for
+
+while
