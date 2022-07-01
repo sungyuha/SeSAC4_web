@@ -13,14 +13,19 @@
 
             // const abc = 100; const는 재선언, 재할당 불가능
 
-            var a = 1;
-            var b = "1";
+            // var a = 1;
+            // var b = "1";
 
-            alert( a + b );
+            // alert( a + b );
+
+            function add (a, b) {
+                alert( a + b);
+            }
         </script>
     </head>
 
     <body>
-
+        <button type="button" onclick="add(4, 5)">버튼</button>
+        <a href="javascript:add(1,2)">a태그</a>
     </body>
 </html>
