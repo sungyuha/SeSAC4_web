@@ -1,0 +1,5 @@
+1. z-index
+-> relative와 absolute만 일때 사용 가능
+-> 무조건 부모속성을 가짐
+
+2. transform
