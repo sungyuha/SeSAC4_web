@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>애니메이션</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                position: relative;
+                animation: myanimation;
+                animation-duration: 2s;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: 3;
+                /* animation-play-state: 동적인 요소를 지정할 때 / js에서 설정 가능; */
+            }
+            @keyframes myanimation {
+                /* 0% ~ 100%로 단계별로 나타낼 수 있음 */
+                0% { left: 0px;}
+                25% { left: 100px;}
+                50% { left: 200px;}
+                75% { left: 300px;}
+                100% { left: 400px;}
+            }
+        </style>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+</html>

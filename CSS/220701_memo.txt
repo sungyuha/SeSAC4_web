@@ -3,3 +3,8 @@
 -> 무조건 부모속성을 가짐
 
 2. transform
+
+3. display
+
+4. animation
+
