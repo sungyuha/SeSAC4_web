@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>계산기 만들기</title>
+
+        <style>
+
+        </style>
+
+        <script>
+            function result(){
+            //     var input1=Number(document.getElementById("value1").value);
+            //     var input2=Number(document.getElementById("value2").value);
+            //     var input3=(document.getElementByI("operator").value);
+            //     var input4=(document.getElementByI("result").value);
+
+            //     if (input3 == "+") {input4 = input1 + input2;
+            //     } else if (input3 =="-") {input4 = input1 - input2;
+            //     } else if (input3 == "*") {input4 = input1 * input2;
+            //     } else if(input3 == "/") {input4 = input1 / input2;
+            //     }
+
+            //     var result = document.getElementById("result");
+            //     result.value = input4;
+
+
+                // var value1 = parseInt(document.getElementById("value1").value);
+                 var input1 = document.getElementById("value1");
+                
+                
+
+                // var value2 = document.getElementById("value2").value;
+                var input2 = document.getElementById("value2");
+                
+                // // input2.value = 10000;
+                var input3 = document.getElementById("value3");
+
+                var input4 = document.getElementById("value4");
+
+                if (input3.value == "+") {input4.value = parseInt(input1.value) + parseInt(input2.value)}
+                else if (input3.value=="-") {input4.value = parseInt(input1.value) - parseInt(input2.value)}
+                else if (input3.value == "*") {input4.value = parseInt(input1.value) * parseInt(input2.value)}
+                else if(input3.value == "/") {input4.value = parseInt(input1.value) / parseInt(input2.value)}
+
+                //var value4 = document.getElementById("value4").value;
+                // // 
+                // // input4.value = "30000";
+
+
+                // var result=document.getElementById("result");
+                // result.value = input4;
+            }
+            
+            function reset(){
+                document.getElementById("value1").value="";
+                document.getElementById("value2").value="";
+                document.getElementById("value3").value="";
+                document.getElementById("value4").value="";
+            }
+        </script>
+    </head>
+
+    <body>
+        값1 : <input type="text" id="value1"><br>   
+        값2 : <input type="text" id="value2"><br>
+        연산자 : <input type="text" id="value3"><br>
+        결과 : <input type="text" id="value4"><br>
+        <button type="button" onclick="result();">계산하기</button>
+        <button type="button" onclick="reset();">초기화</button>
+    </body>
+</html>
