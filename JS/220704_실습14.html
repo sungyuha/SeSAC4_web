@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>방명록 만들기</title>
+        <style>
+            .a1{ text-align: center;}
+        </style>
+        <script>
+            function add() {
+                var input1= document.getElementById("value1").value;
+                var input2= document.getElementById("value2").value;
+
+                var table = document.getElementById("table") [0];
+
+                var newriw = table.insertRow(0);
+
+                var cell = newRow.insertCell(0);
+                var cel2 = newRow.insertCell(1);
+
+                cell.innerHTML = input1;
+                cel2.innerHTML = input1;
+
+                /* var input = document.createElement( "tr" );
+                var input = document.createElement( "td" );
+                var input = document.createElement( "td" );
+                var input = document.createElement( "td" );
+                var input = document.createElement( "td" ); */
+                
+                // for ( var i = 1; i < ta)
+            }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <p>방명록 입니다.</p>
+            작성자 : <input type="text" id="value1"><br>
+            내용 : <input type="text" id="value2"><br>
+            <br>
+            <button type="button" onclick="add();">작성</button>
+        </div>
+        <br>
+        <table id ="table" border="1" cellpadding="15">
+            <tr class="a1">
+                <td>번호</td>
+                <td>작성자</td>
+                <td>내용</td>
+                <td>작성일</td>
+            </tr>
+        </table>
+    </body>
+</html>
