@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>타이틀</title>
+        <meta charset="UTF-8">
+
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <div>
+           <img src="1.jpg" title="1" width="100" height="100">
+           <img src="2.jpg" title="2" width="100" height="100">
+           <img src="3.jpg" title="3" width="100" height="100">
+        </div>
+        
+        <div id="div1" class="div1">
+            <input type="text" id="input1" value="값">
+            <button  type="button" onclick="sumbit();">버튼</button>
+            <p class="css1">p태그 1</p>
+            <p class="css2">p태그 2</p>
+            <div>
+                <p class="css1">p태그3</p>
+            </div>
+        </div>
+        
+        <script>
+            console.log( document.getElementsByTagName("img"));
+            console.log( document.getElementById("input1"));
+            console.log( document.querySelectorAll("#div1 > .css1"));
+
+            function sumbit(){
+                var input = document.getElementById("input1");
+                console.log( input.value );
+            }    
+        </script>
+    </body>
+</html>

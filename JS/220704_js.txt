@@ -1,0 +1,87 @@
+*언어 타입
+
+강한 타입 언어
+ - java, C, C++
+약한 타입 언어
+ - javascript
+
+*javascript 자료형
+
+불린 : 참, 거짓 둘 중 하나의 값을 갖는 요소
+number : 숫자형, 정수와 실수
+String : 문자 데이터를 나타낼 때 사용
+null : 빈 값
+undefined : 값X 타입X
+
+1) object 자료형
+객체 자료형
+
+참조 자료형
+
+object 클래스 뿐 아니라 배열과 함수, 
+
+객체 - 실행활에서 우리가 인식할 수 있는 사물
+
+object 자료형 - 배열
+ 숫자형과 문자열과 마찬가지로 일반적인 스크립트와 동일
+ [] 나 new Array()를 이용해 생성
+
+object 자료형 - 딕셔너리
+
+키 - 값 형태로 저장
+
+문자를 작성할땐 '' 작성
+
+기본 자료형 vs 객체 자료형
+
+.typeof() -> 변수의 자료형 확인하기
+
+숫자를 문자로 변경 
+    -> String()
+    -> 변수.toString() : 변수가 문자로 바뀜
+문자를 숫자로 변경 
+    -> Number()
+        ex) Number(true)를 숫자로 변경하면 숫자 1이 나옴 
+        Number('10')
+    -> parseInt()
+        ex) parseInt('10')
+
+javascript 표준 객체
+ - 자바스크립트가 기본적으로 가지고 있는 객체들
+ - 프로그래밍 하는데 기본적으로 필요한 도구들
+ - Date, Math
+
+
+* Date 객체
+ - 매 순간 바뀌는 시간과 날짜에 관한 정보를 얻기 위해 사용하는 객체
+ - 초기화 
+    ex) new Date() -> 기본 형태
+
+*Math 객체
+ - 수학에서 자주 사용하는 상수와 함수들을 미리 구현해 놓은 자바스크립트 표준 내장 객체
+ - 생성자 존재 X ( new Math(); 를 이용하지 않음)
+ - 웹 브라우저마다 다른 결과를 얻음
+
+
+    round() : 반올림
+    floor() : 내림
+    ceil() : 올림
+
+javascript DOM (중요)
+
+DOM : Document object Model (문서 객체 모델)
+
+ - 새로운 HTML 요소나 속성 추가
+ - 존재하는 HTML 요소나 속성 제거
+
+
+Document - 속성
+
+문서안의 모든 요소를 가져옴
+
+Document - 요소 선택
+
+ ex) Document.getElemenetByTagName(태그이름)
+
+Document - 요소 다루기
+
