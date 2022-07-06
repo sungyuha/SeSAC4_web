@@ -5,46 +5,82 @@
             .a1{ text-align: center;}
         </style>
         <script>
-            function add() {
-                var input1= document.getElementById("value1").value;
-                var input2= document.getElementById("value2").value;
+                /* 
+                var num = 1;
+                function write(){
+                //var date2 = new Date(2016,5,25);
+                //console.log( date2.getFullYear() );
+                //document가 html보다 상위
+                //document.write
+                //var a = a + 10;
+                var visitor = document.getElementById("value1").value;
+                //var num = 1;
+                var contents = document.getElementById("value2").value;
+                var date = new Date();
+                const table = document.getElementById("table");
+                const newRow = table.insertRow();
+                const newCell0 = newRow.insertCell(0);
+                const newCell1 = newRow.insertCell(1);
+                const newCell2 = newRow.insertCell(2);
+                const newCell3 = newRow.insertCell(3);
+                newCell0.innerText = num;
+                console.log(num);
+                newCell1.innerText = value1;
+                newCell2.innerText = value2;
+                newCell3.innerText = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes();
+                num = num + 1;
+            } */
 
-                var table = document.getElementById("table") [0];
+            // 선생님과 함께 코드 작성
 
-                var newriw = table.insertRow(0);
+            
 
-                var cell = newRow.insertCell(0);
-                var cel2 = newRow.insertCell(1);
 
-                cell.innerHTML = input1;
-                cel2.innerHTML = input1;
+            function writeNote(){
+                var name = document.getElementById("name").value;
+                var content = document.getElementById("content").value;
 
-                /* var input = document.createElement( "tr" );
-                var input = document.createElement( "td" );
-                var input = document.createElement( "td" );
-                var input = document.createElement( "td" );
-                var input = document.createElement( "td" ); */
-                
-                // for ( var i = 1; i < ta)
+                var table = document.getElementById("table");
+                var garo = document.createElement("tr");
+
+                var kan1 = document.createElement("td");
+                kan1.innerText = document.querySelectorAll("#table tr").length;
+                var kan2 = document.createElement("td");
+                kan2.innerText = name;
+                var kan3 = document.createElement("td");
+                kan3.innerText = content;
+
+                var kan4 = document.createElement("td");
+
+                var date = new Date();
+                console.log( date );
+                kan4.innerText = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+
+                garo.appendChild(kan1);
+                garo.appendChild(kan2);
+                garo.appendChild(kan3);
+                garo.appendChild(kan4);
+                table.appendChild(garo);
             }
+            
         </script>
     </head>
 
     <body>
         <div>
             <p>방명록 입니다.</p>
-            작성자 : <input type="text" id="value1"><br>
-            내용 : <input type="text" id="value2"><br>
+            작성자 : <input type="text" id="name"><br>
+            내용 : <input type="text" id="content"><br>
             <br>
-            <button type="button" onclick="add();">작성</button>
+            <button type="button" onclick="writeNote();">작성</button>
         </div>
         <br>
         <table id ="table" border="1" cellpadding="15">
             <tr class="a1">
-                <td>번호</td>
-                <td>작성자</td>
-                <td>내용</td>
-                <td>작성일</td>
+                <td id="kan1">번호</td>
+                <td id="kan2">작성자</td>
+                <td id="kan3">내용</td>
+                <td id="kan4">작성일</td>
             </tr>
         </table>
     </body>

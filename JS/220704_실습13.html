@@ -4,6 +4,45 @@
 
         <script>
             function result(){
+                // 선생님과 함께 코딩하기
+                var num1 = document.getElementById("v1").value;
+                var num2 = document.getElementById("v2").value;
+                var op = document.getElementById("op").value;
+
+
+                num1 = parseInt(num1);
+                num1 = parseInt(num2); // Number(num2)
+
+                // var result = document.getElementById("res");
+                // result.value = Number;
+
+                switch(op) {
+                    case "+":
+                        result.value = num1 + num2;
+                    break;
+                    case "-":
+                        result.value = num1 - num2;
+                    break;
+                }
+
+                var result = document.getElementById("res");
+                result.value = Number;
+
+
+            }
+            function reset(){
+                // document.getElementById("value1").value == "";
+                // document.getElementById("value2").value == "";
+                // document.getElementById("res").value == "";
+                // document.getElementById("value1").value == "";
+                var inputs = document.querySelectorAll("input");
+                console.log(inputs);
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].value = "";
+                }
+            }
+
+
             // 첫 번째 ver
             /* var input1 = document.getElementById("value1");
             var input2 = document.getElementById("value2");
@@ -16,7 +55,7 @@
             else if(input3.value == "/") {input4.value = parseInt(input1.value) / parseInt(input2.value)} */
 
             // 두 번째 ver
-            var input1=Number(document.getElementById("value1").value);
+            /* var input1=Number(document.getElementById("value1").value);
             var input2=Number(document.getElementById("value2").value);
             var input3 = document.getElementById("operator").value;
             var input4 = document.getElementById("result").value;
@@ -31,7 +70,7 @@
 
             var result=document.getElementById("result");
             result.value = input4;
-            }
+            } */
             
             // 첫 번째 ver
             /* function reset(){
@@ -42,20 +81,20 @@
             } */
 
             // 두 번째 ver
-            function reset(){
+            /* function reset(){
                 document.getElementById("value1").value="";
                 document.getElementById("value2").value="";
                 document.getElementById("operator").value="";
-                document.getElementById("result").value="";
-            } 
-        </script>
+                document.getElementById("res").value="";
+            } */
+        </script> 
     </head>
 
     <body>
-        값1 : <input type="text" id="value1"><br>   
-        값2 : <input type="text" id="value2"><br>
-        연산자 : <input type="text" id="operator"><br>
-        결과 : <input type="text" id="result"><br>
+        값1 : <input type="text" id="v1"><br>  
+        값2 : <input type="text" id="v2"><br>
+        연산자 : <input type="text" id="op"><br>
+        결과 : <input type="text" id="res"><br>
         <button type="button" onclick="result();">계산하기</button>
         <button type="button" onclick="reset();">초기화</button>
     </body>
