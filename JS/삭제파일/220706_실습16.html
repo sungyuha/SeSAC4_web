@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>클래스 바꾸기</title>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <script>
+            function changeColor(){
+                if ( $("div").hasClass("red")){
+                    $("div").switchClass("red", "orange");
+                } // else if ( $("div").switchClass("orange") );
+                //     $("div").switchClass("orange", "yellow");
+            }
+        </script>
+
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+            }
+            div:hover{
+                cursor: pointer;
+            }
+            .red {
+                background-color: red;
+            }
+            .orange {
+                background-color: orange;
+            }
+            .yellow {
+                background-color: yellow;
+            }
+            .green {
+                background-color: green;
+            }
+            .blue {
+                background-color: blue;
+            }
+            .purple {
+                background-color: purple;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="div2" class="red" onclick="changeColor()"></div>
+    </body>
+</html>

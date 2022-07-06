@@ -1,13 +1,14 @@
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        
         <script>
             function setValue(){
-                // $().함수();
-                $("#input1").val("setting");
-            }
+                //document.getElementById("input1").value = "~~~";
+                $( "#input1" ).val( "setting" );
+            }   
             function getValue(){
-                alert( $("#input1").val() );
+                alert( $( "#input1" ).val() );
             }
             function changeStyle(){
                 // var span = document.querySelector("span");
@@ -16,31 +17,33 @@
                 $("span").css("color", "orange");
             }
             function changeText(){
-                $("span").text("jQuery~~~");
+                // var span = document.querySelector("span");
+                // span.innerText = "javascript!!!";
+                $("span").text("jQuery~~~~");
             }
             function changeAttribute(){
+                // var img = document.querySelector("img");
+                // img.width = "100";/
                 $("img").attr("width", "100");
             }
             function changeHTML(){
                 // var p = document.querySelector("p");
-                // p.innerHTML = "<h1>p태그 입니다~~~~~</h1>" / innerHTML는 태그를 태그로 인식할 수 있다
-                $("p").html("<h3>~~~~~~</h3>");
+                // p.innerHTML = "<h1>ㅂㅏㄴㄱㅏㅇㅜㅓㅇㅛ</h1>";
+                $("p").html("<h3>~~</h3>");
             }
-        </script>
+    </script>
     </head>
-
     <body>
-        <input tpye="text" id="input1">
-        <button tpye="button" onclick="setValue();">setValue</button>
-        <button tpye="button" onclick="getValue();">getValue</button>
+        <input type="text" id="input1">
+        <button type="button" onclick="setValue();">setValue</button>
+        <button type="button" onclick="getValue();">getValue</button>
         <br>
-        <span>안녕</span>
-        <img src="a.jpg">
-        <!-- <p>This is p tag</p> -->
+        <span style="width: 100px;">안녕</span>
+        <img src="">
         <button type="button" onclick="changeStyle();">changeStyle</button>
         <button type="button" onclick="changeText();">changeText</button>
         <button type="button" onclick="changeAttribute();">changeAttribute</button>
-        <p style="background-color: orange;">p태그</p>
+        <p style="background-color: orange">pㅌㅐㄱㅡ</p>
         <button type="button" onclick="changeHTML();">changeHTML</button>
     </body>
 </html>
