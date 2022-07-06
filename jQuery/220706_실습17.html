@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <title>스케줄</title>
+
+        <head>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="../jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+            <link href="../jquery-ui-1.13.1.custom/jquery-ui.css">
+        </head>
+
+        <style>
+            #table{
+                text-align: center;
+                margin: 0 auto;
+                cursor: pointer;
+                /* text-weight: ; */
+            }
+            .tb1{
+                text-align: center;
+                font-size: 30px;
+                color: green
+            }
+            .t1{
+                color:red;
+            }
+            .t2{
+                color:blue;
+            }
+        </style>
+
+        <script>
+            function write(){
+                var now = ( $("div").attr("class"));
+                var i = table.indexOf(now);
+            }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <!-- <table class="">
+            <tr>
+                <th>날짜 : </th>
+                <td> 
+                    <input type="text" id="v1">
+                </td>
+                <th>내용 : </th>
+                <td>
+                    <input type="text" id="v1">
+                </td>
+            </table> -->
+            날짜 : <input type="text" id="name" style="width: 150px;"><br>
+            내용 : <input type="text" id="content" style="width: 150px;"><br>
+            <button type="button" onclick="write()">작성</button>
+        </div>    
+            <br><br>
+            <div class="tb1">2022년 7월</div>
+            <table id="table" cellspacing="1" cellpadding="20">
+                    <tr>
+                        <th class="t1">日</th>
+                        <th>月</th>
+                        <th>火</th>
+                        <th>水</th>
+                        <th>木</th>
+                        <th>金</th>
+                        <th class="t2">土</th>
+                    </tr>
+                    <tr>
+                        <td class="t1"></td>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>1</th>
+                        <th class="t2">2</th>
+                    </tr>
+                    <tr>
+                        <th class="t1">3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th class="t2">9</th>
+                    </tr>
+                    <tr>
+                        <th class="t1">10</th>
+                        <th>11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15</th>
+                        <th class="t2">16</th>
+                    </tr>
+                    <tr>
+                        <th class="t1">17</th>
+                        <th>18</th>
+                        <th>19</th>
+                        <th>20</th>
+                        <th>21</th>
+                        <th>22</th>
+                        <th class="t2">23</th>
+                    </tr>
+                    <tr>
+                        <th class="t1">24</th>
+                        <th>25</th>
+                        <th>26</th>
+                        <th>27</th>
+                        <th>28</th>
+                        <th>29</th>
+                        <th class="t2">30</th>
+                    </tr>
+                    <tr>
+                        <th class="t1">31</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th class="t2"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

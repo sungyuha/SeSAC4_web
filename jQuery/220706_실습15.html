@@ -4,11 +4,12 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <script>
-            /* function change( fruit ){
-                $("img").attr("src", "../JS/img/" + "fruit" + ".jpg");
+             function change( fruit ){
+                $("img").attr("src", fruit + ".jpg");
+                // $( "img" ).attr("src", "a.jpg");
             }
-            */
-            function change(){
+            
+            /* function change(){
                 $("img").attr("src", "a.jpg");
             }
             function change2(){
@@ -19,7 +20,7 @@
             }
             function change4(){
                 $("img").attr("src", "d.jpg");
-            }
+            } */
 //             function change ( fruit ){
 //                 $("div").swithClass("apple", "banana");
 // ;         }
@@ -36,10 +37,10 @@
             <img width="500" height="500">
         </div>    
         
-        <button type="button" onclick="change()">사과</button>
-        <button type="button" onclick="change2()">바나나</button>
-        <button type="button" onclick="change3()">포도</button>
-        <button type="button" onclick="change4()">복숭아</button>
+        <button type="button" onclick="change('a')">사과</button>
+        <button type="button" onclick="change2('b')">바나나</button>
+        <button type="button" onclick="change3('c')">포도</button>
+        <button type="button" onclick="change4('d')">복숭아</button>
 
         <!-- <button type="button" onclick="change('apple')">사과</button>
         <button type="button" onclick="change('banna')">바나나</button>
