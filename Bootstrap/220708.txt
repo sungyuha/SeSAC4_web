@@ -4,3 +4,7 @@ display
 flex 
 중요
 
+col-sm-4 col-lg-6
+
+else if ( width >= lg ) col
+if ( width >= sm ) col-4
