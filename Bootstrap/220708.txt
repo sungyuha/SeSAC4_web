@@ -6,5 +6,6 @@ flex
 
 col-sm-4 col-lg-6
 
-else if ( width >= lg ) col
+else if ( width >= lg ) col-6
 if ( width >= sm ) col-4
+
