@@ -2,9 +2,9 @@
     <head>
         <meta charset="UTF-8">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js" ></script>
-​
+
         <title> 내 스케줄 </title>
-​
+
         <style>
             td {
                 width: 100px;
@@ -24,7 +24,7 @@
             }
         </style>
     </head>
-​
+
     <body > 
         <div>
             날짜 : <input type="text" id="date" readonly> <br>
@@ -34,7 +34,7 @@
         <div style="font-size:2em; color:green; text-align:center;">
             2022년 7월        
         </div> 
-​
+
         <br>
         
         <table align="center" width=500 style="text-align:center;">
@@ -101,7 +101,7 @@
                 <td><p></p></td>
             </tr>
         </table>
-​
+
         <script>
             var target;
             
@@ -112,7 +112,6 @@
                 $("#date").val( $(obj.currentTarget).text() );
                 // alert( $(obj.currentTarget).text() );
             });
-​
             function writeSchedule(){
                 // 이 함수를 채워주세요.
                 var content = $("#content").val();
@@ -129,5 +128,6 @@
                 } 
             }
         </script>
+        <!-- 애플에서 엔터는 윈도우와 달라서 엔터를 치면 컴퓨터가 받아드리는 것이 다르다. -->
     </body>
 </html>
