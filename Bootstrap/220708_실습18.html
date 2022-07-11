@@ -17,21 +17,22 @@
         .news-title {
           margin-left: 50px;
           margin-top: 50px;
+          width: auto;
         }
         .cardbox {
           display: flex;
+          justify-content: center;
         }
         .card {
-          margin-left: 30px;
+          margin-left: 15px;
         }
-        .card2, .card3 {
+        /* .card2, .card3 {
           margin-left: 50%;
-        }
+        } */
         .cardbox > .card {
           display: flex;
-          margin: 0 auto;
+          /* margin: 0 auto; */
           margin-top: 60px;
-          justify-content: center;
         }
     </style>
 
@@ -69,14 +70,16 @@
                         <li><a class="dropdown-item" href="#">Javascript</a></li>
                         <li><a class="dropdown-item" href="#">jQuery</a></li>
                         <li><a class="dropdown-item" href="#">Python</a></li>
-                    </ul>    
+                    </ul>
                   </li>
+                  <li class="nav-item">
+                    <a link="#" class="nav-link primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        오시는 길
+                    </a>
+                </li>
                 </ul>
             
                 <!-- Button trigger modal -->
-                <a link="#" class="primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    오시는 길
-                </a>
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,18 +143,14 @@
           </div>
 
           <div>
-            
-            <img src="./coding7.PNG" class="img-fluid" alt="배너" style="width: 100%; height: 40%;">
-          </div>
-
-
+            <img src="./coding4.jpg" class="img-fluid" alt="배너" style="width: 100%; height: 40%;">
           <div>
             <h2 class="news-title">코딩 카드뉴스</h2>
           </div>
 
           <div class="cardbox">
               <div class="card" style="width: 18rem;">
-              <img src="./coding4.jpg" class="card-img-top" alt="코딩" style="width: 18rem; height: 10rem;">
+              <img src="./coding5.jpg" class="card-img-top" alt="코딩" style="width: 18rem; height: 10rem;">
               <div class="card-body">
                   <h5 class="Card_title">코딩뉴스</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -160,7 +159,7 @@
               </div>
             
             <div class="card" style="width: 18rem;">
-              <img src="./coding5.jpg" class="card-img-top" alt="코딩" style="width: 18rem; height: 10rem;">
+              <img src="./coding6.jpg" class="card-img-top" alt="코딩" style="width: 18rem; height: 10rem;">
               <div class="card-body">
                 <h5 class="Card_title2">코딩뉴스2</h5>
                 <p class="card-text2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -169,7 +168,7 @@
             </div>
 
             <div class="card" style="width: 18rem;">
-              <img src="./coding6.jpg" class="card-img-top" alt="코딩" style="width: 18rem; height: 10rem;">
+              <img src="./coding7.PNG" class="card-img-top" alt="코딩" style="width: 18rem; height: 10rem;">
               <div class="card-body">
                 <h5 class="Card_title3">코딩뉴스3</h5>
                 <p class="card-text3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -177,5 +176,9 @@
               </div>
             </div>
           </div>
+
+        <div>
+            
+        </div>
     </body>
 </html>
