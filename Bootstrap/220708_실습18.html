@@ -34,6 +34,25 @@
           /* margin: 0 auto; */
           margin-top: 60px;
         }
+
+        @media (max-width: 800px) {
+          body {
+            background: rgb(241, 241, 241);
+          }
+          .card_wrap {
+            display: flex;
+          }
+          .cardbox {
+            display: inline-block;
+            justify-content: center;
+            width: 100%;
+          }
+          .cardbox > .card {
+            margin: 0 auto;
+            margin-top: 40px;
+            /* margin-bottom: 20px; */
+          }
+        }
     </style>
 
     <body>
@@ -148,6 +167,7 @@
             <h2 class="news-title">코딩 카드뉴스</h2>
           </div>
 
+          <div class="card_wrap">
           <div class="cardbox">
               <div class="card" style="width: 18rem;">
               <img src="./coding5.jpg" class="card-img-top" alt="코딩" style="width: 18rem; height: 9rem;">
@@ -176,6 +196,7 @@
               </div>
             </div>
           </div>
+        </div>
 
         <div>
             
