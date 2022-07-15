@@ -1,0 +1,28 @@
+1. test.html 파일 만들고 push
+git add .
+git commit -m "study: create test.html file"
+git push origin main
+
+2. test라는 branch 만들기
+git branch test
+
+3. h5 부분 수정하고 commit
+git add .
+git commit -m "study: change h5 text"
+
+4. test 브랜치로 옮겨가기
+git checkout test
+
+5. title 과 h5 내용 수정
+git add .
+git commit -m "study: change title and h5 text" 
+git push origin test
+
+6. main 브랜치에서 test 브랜치 merge 
+git checkout main
+git merge test
+
+7. 충돌 해결 후
+git add .
+git commit -m "study: solve merge"
+git push origin main

@@ -1,0 +1,39 @@
+branch (브랜치)
+
+브랜치 삭제할때 명령어
+git branch -D "브랜치 이름"
+
+
+* branch (브랜치) 종류
+
+master 
+
+develop (디빌롭)
+- 다음 출시 버젼을 개발하는 브랜치
+- 기능 개발을 위한 브랜치들을 병합하기 위해 사용
+- 평소 개발을 진행하는 브랜치
+
+feature
+- 기능 개발을 진행하는 브랜치
+- 새로운 기능 개발 및 버그 수정을 할 때마다 'develop'에서 분기
+- 공유할 필요가 없어 로컬에서 진행 후 develop 에 merge 해 공유
+- 이름 : feature/~~
+
+release (릴리즈)
+- 출시 버전을 준비하는 브랜치
+- 배포를 위한 전용 브랜치
+- 이름 : release-0.0
+
+hotfix (핫픽스)
+- 출시 버전에서 발생한 버그 수정 브랜치
+- 배포한 버전에 긴급하게 수정해야 할 필요가 있는 경우 사용
+- master에서 분기
+- 이름 : hotfix-0.0.0
+
+* git 
+git commit -am : 한 번에 add와 동시에 commit 함
+
+git fetch : 브랜치를 retome에서 가져오기
+
+*gitgnore
+- git 버전 관리에서 제외할 파일 목록을 지정하는 파일
