@@ -28,6 +28,7 @@ login( 'kim', '1234' )
     .then( function(videos) {
         console.log( videos );
         return getDetail( videos[0] );
+        
     })
     .then( function(title) {
         console.log( title );
