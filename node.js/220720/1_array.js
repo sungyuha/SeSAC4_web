@@ -7,3 +7,12 @@ let list = ['apple', 'banana'];
 console.log("item1 : ", item1 );
 console.log("item2 : ", item2 );
 console.log("item3 : ", item3 );
+
+let x=1;
+let y=3;
+
+[ y,x ] = [ x,y ]; // 변수를 공유
+
+// let temp = x;
+// x = y;
+// y = tmep;
