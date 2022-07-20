@@ -24,6 +24,7 @@ function hell(message) {
         }, 1000);
     })
 }
+/* function exec(){
 call( 'kim' )
 .then( function(name) {
     console.log( name + '반가워');
@@ -37,3 +38,15 @@ call( 'kim' )
 .then( function(message) {
     console.log( "여기는" + message );
 });
+} */
+
+async function exec(){
+    let name = await call("kim");
+    console.log( name + "반가워" );
+    let txt = await back();
+    console.log( txt + "을 실행을 했구나" );
+    let message = await hell();
+    console.log( "여기는" + message );
+}
+
+exec();
