@@ -3,6 +3,9 @@
         <title>EJS</title>
     </head>
     <body>
+        <p>
+            <%=a%>
+        </p>
         <!-- 
             for ( var i = 0; i< 5; i++ ){
                 if ( i == 3 ){
@@ -13,12 +16,13 @@
             }
          -->
         
-        <% for( var i = 0; i < 5; i++) { %>
-            <% if ( i == 3 ) { %>
+        <% for( var i = 0; i < list.length; i++) { %>
+            <!-- <% if ( i == 3 ) { %>
                 <h3>hi</h3>
             <% } else { %>
                 <h1>h1</h1>
-            <% } %>
+            <% } %> -->
+            <h1><%=list[i]%></h1>
         <% } %>
 
         <% var a = 'hello'; %>

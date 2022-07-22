@@ -15,8 +15,13 @@ app.use( '/abc', express.static( 'public' )); // 앞에 /이름을 붙이면 가
 // EJS
 app.set( 'view engine', 'ejs' );
 
+// app.get('/', (req, res) => {
+//     res.render( "test", {a: 'aaa', b: 'bbb'} );
+// });
+
 app.get('/', (req, res) => {
-    res.render( "test" );
+    var list = ['apple', 'banana']; // DB에서 정보를 가져왔다.
+    res.render( "test", {list: list});
 });
 
 app.listen(port, () => {
