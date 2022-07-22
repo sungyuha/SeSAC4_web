@@ -1,17 +1,35 @@
 const http = require('http');
-const fs = require('fs').promises;
+const fs = require('fs');
 
 const server = http.createServer( async function(req, res){
-    try {
-        const data = await fs.readFile('./220629.html');
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf8'});
-        res.end(data);
-    } catch(err) {
-        console.error(err);
-        res.writeHead(404);
-        res.end(err.message);
-    } 
+    fs.readFile('./5_http.html', function( err, data ){
+        if(err){
+            // promise 에서의 catch
+
+            console.error(err);
+            res.writeHead(404);
+            res.end(err.message);
+        } else {
+            // primoise 에서의 try
+            res.writeHead(200);
+            res.end(data);
+        }
+    });
 });
+
+// const fs = require('fs').promises;
+
+// const server = http.createServer( async function(req, res){
+//     try {
+//         const data = await fs.readFile('./220629.html');
+//         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf8'});
+//         res.end(data);
+//     } catch(err) {
+//         console.error(err);
+//         res.writeHead(404);
+//         res.end(err.message);
+//     } 
+// });
 
 server.listen(8080, function(){
     console.log( "8080 포트" );
