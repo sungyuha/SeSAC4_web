@@ -1,4 +1,4 @@
-const { Car } = require('./2_class.js');
+const Car = require('./2_class.js');
 
 console.log( Car );
 

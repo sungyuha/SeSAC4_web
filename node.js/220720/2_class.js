@@ -14,7 +14,7 @@
 // cat2.mew();
 
 class Car {
-    constructor(){
+    constructor( color ){
         this.color = color;
         this.isWheel = true;
         this.isDoor = true;
