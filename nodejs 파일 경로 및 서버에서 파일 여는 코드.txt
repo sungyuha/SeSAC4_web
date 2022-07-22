@@ -5,12 +5,6 @@ root@sesac4:~# cd /nodejs/220720/
 root@sesac4:~# cd /nodejs/
 root@sesac4:/nodejs# ls
 4_fs.js  5_http-2.js
-root@sesac4:/nodejs# cd /220720/
--bash: cd: /220720/: No such file or directory
-root@sesac4:/nodejs# cd /220720/
--bash: cd: /220720/: No such file or directory
-root@sesac4:/nodejs# /nodejs# ls
--bash: /nodejs#: No such file or directory
 root@sesac4:/nodejs# /nodejs# ls
 -bash: /nodejs#: No such file or directory
 root@sesac4:/nodejs# ls
