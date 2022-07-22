@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>EJS</title>
+    </head>
+    <body>
+        <!-- 
+            for ( var i = 0; i< 5; i++ ){
+                if ( i == 3 ){
+                    // h3 태그
+                } else {
+                    // h1 태그
+                }
+            }
+         -->
+        
+        <% for( var i = 0; i < 5; i++) { %>
+            <% if ( i == 3 ) { %>
+                <h3>hi</h3>
+            <% } else { %>
+                <h1>h1</h1>
+            <% } %>
+        <% } %>
+
+        <% var a = 'hello'; %>
+        <p><%=a%></p>
+
+        <%- include('test2.ejs') %>
+    </body>
+</html>

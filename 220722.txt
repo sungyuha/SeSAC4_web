@@ -1,9 +1,0 @@
-npm
-. 노드 패캐지를 관리해주는 틀
-
-npm 사용하기
-npm list
-
-npm init --yes
-- package.json생성 된다.
-npm install 패키지 이름
