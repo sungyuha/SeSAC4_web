@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 
 const server = http.createServer( async function(req, res){
-    fs.readFile('./5_http.html', function( err, data ){
+    fs.readFile('./220629.html', function( err, data ){
         if(err){
             // promise 에서의 catch
 
