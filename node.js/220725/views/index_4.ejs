@@ -10,10 +10,14 @@
                 margin-top: 50px;
             }
             legend {
-                text-decoration: hidden;
+                position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;
+            }
+            label {
+                text-align: left;
             }
             h2 {
                 text-align: center;
+                margin-top: 200px;
             }
         </style>
     </head>
@@ -50,7 +54,7 @@
                         <input type="text" class="form-control" name="phone" placeholder="휴대폰번호" aria-label="default input example">
                     </label><br>
                     <br>
-                <button>회원가입</button>
+                    <button type="button" class="btn btn-outline-success">회원가입</button>
             </fieldset>
         </form>
     </body>
