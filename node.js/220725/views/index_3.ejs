@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>POST로 정보 받기</title>
+    </head>
+
+    <body>
+            <!-- <div>
+                <p>폼 전송 - 실습</p>
+            </div>     -->
+            <form action="receive3" method="POST">
+                <fieldset>
+                    <legend>필수입력</legend>
+                    <label>
+                        이름
+                        <input type="text" name="name" placeholder="이름" required>
+                    </label><br>
+                    <br>
+                    <label>
+                        성별
+                        <input type="radio" name="gender" id="gender_1" value="남" required>
+                        <label for="gender_1">남자</label>
+                        <input type="radio" name="gender" id="gender_1" value="여" required>
+                        <label for="gender_1">여자</label>
+                    </label><br>
+                    <br>
+                    <label>
+                        생년월일
+                        <select name="year">
+                            <% for( var i = 1950; i < 2023; i++) { %>
+                                <option value=<%=i%>><%=i%></option>
+                            <% } %>
+                        </select>
+
+                        <select name="mm">
+                            <% for( var i = 1; i < 13; i++) { %>
+                                <option value=<%=i%>><%=i%></option>
+                            <% } %>
+                        </select>
+
+                        <select name="day">
+                            <% for( var i = 1; i < 32; i++) { %>
+                                <option value=<%=i%>><%=i%></option>
+                            <% } %>
+                        </select>
+                    </label><br>
+                    <br>
+                </fieldset><br>
+                <fieldset>
+                    <label>
+                        관심사
+                        <input type="checkbox" name="like" value="여행">여행
+                        <input type="checkbox" name="like" value="패션">패션
+                        <input type="checkbox" name="like" value="음식">음식
+                    </label><br>
+                    <br>
+                    <label>
+                        좋아하는 색
+                        <input type="color" name="color"><br>
+                    </label><br>
+                    <label>
+                        색상 관심도
+                        <input type="range" name="range"><br>
+                    </label><br>
+                <button>회원가입</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
