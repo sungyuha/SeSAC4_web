@@ -4,27 +4,36 @@
     </head>
 
     <body>
-        <form action="receive" method="POST"> <!-- receive경로로 데이터를 받겠다 라는 것 -->
-            <input type="text" name="name" placeholder="이름" required> <!-- required : 필수 입력 값 --><br>
-            <input type="radio" name="gender" value="남">남
-            <input type="radio" name="gender" value="여">여<br>
-            <input type="checkbox" name="sport" value="축구">축구
-            <input type="checkbox" name="sport" value="야구">야구
-            <input type="checkbox" name="sport" value="농구">농구<br>
-            <!-- <input type="date">
-            <input type="color">
-            <input type="number">
-            <input type="time">
-            <input type="password">
-            <input type="reset" value="Reset"> -->
+        <form action="receive" method="GET"> <!-- receive경로로 데이터를 받겠다 라는 것 -->
+            <fieldset>
+                <legend>이름/성별</legend>
+                <label>
+                    이름 :
+                    <input type="text" name="name" placeholder="이름" required> <!-- required : 필수 입력 값 --><br>
+                </label>
+                <input type="radio" name="gender" id="gender_1" value="남">
+                <label for="gender_1">남</label>
+                <input type="radio" name="gender" value="여">여<br>
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" name="sport" value="축구">축구
+                <input type="checkbox" name="sport" value="야구">야구
+                <input type="checkbox" name="sport" value="농구">농구<br>
+                <!-- <input type="date">
+                <input type="color">
+                <input type="number">
+                <input type="time">
+                <input type="password">
+                <input type="reset" value="Reset"> -->
 
-            <select name="year">
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-                <option value="2018">2018</option>
-            </select>
+                <select name="year">
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                </select>
+            </fieldset>
             <button>전송</button>
         </form>
     </body>

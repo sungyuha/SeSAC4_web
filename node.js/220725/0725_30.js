@@ -9,24 +9,19 @@ app.use(express.urlencoded({extended: true}));
 app.use( bodyParser.json() );
 
 app.get("/", function(req,res){
-    // console.log( req.body );
-    res.render("index");
+    res.render("index_2");
 });
 
-app.get("/receive", function(req,res){
-    // console.log("receive-get");
+app.get("/receive2", function(req,res){
     console.log( req.query );
-    res.render("receive", req.query);
+    res.render("receive2", req.query);
 });
 
-app.post("/receive", function(req,res){
-    // console.log("receive-post");
+app.post("/receive2", function(req,res){
     console.log( req.body );
-    res.render("receive", req.body);
-
-    // res.render("receive", {a:1, b:2});inde
+    res.render("receive2", req.body);
 });
 
 app.listen(port, ()=>{
     console.log( "Server Port :", port );
-})
+});
