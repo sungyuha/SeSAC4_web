@@ -26,7 +26,7 @@ app.post("/receive3", function(req,res){
 
     // console.log(i);
 
-    data = form.value//sesac1234
+    data = info.value//sesac1234
 
     let arr = data.split("//");
     if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
