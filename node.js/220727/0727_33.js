@@ -14,12 +14,14 @@ app.get("/", function(req,res){
 
 app.get("/receive2", function(req,res){
     console.log( req.query );
-    res.render("receive2", req.query);
-});
+    let name = req.query.name;
+    let msg = req.query.name + '님 회원가입 완료되었습니다.';
+    res.send({name: name, message: msg});
+})
 
 app.post("/receive2", function(req,res){
     console.log( req.body );
-    res.render("receive2", req.body);
+    res.send("receive2", req.body);
 });
 
 app.listen(port, ()=>{
