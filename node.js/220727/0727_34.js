@@ -23,13 +23,12 @@ app.post("/receive3", function(req,res){
     .then((data) => {
         let arr = data.toString().split("//");
         if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
-           res.send("success");
+           res.send("로그인이 되었습니다.");
         } else {
-            res.send("fail");
+            res.send("로그인이 실패하였습니다.");
         }
     });
 
-    
     // arr = { "sesac", "sesac1234" };
 });
 
