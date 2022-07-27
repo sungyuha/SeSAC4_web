@@ -5,6 +5,18 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         <script>
+            function sendGet(){
+                axios({
+                    method: "get",
+                    url: "http://localhost:9999/receive",
+                    params: {
+                        name: "codee"
+                    } 
+                }).then((a) => {return a.data; })
+                .then((d) => {
+                    alert( d.message );
+                });
+            }
             function sendPost(){
                 axios({
                     method: "post",
@@ -12,7 +24,12 @@
                     data: {
                         name: "codee"
                     } // axios로 처리 할때는 input 사용 하지 않아도 됨
-                }).then((Response) => { console.log( Response ); });
+                }).then((a) => {return a.data; })
+                .then((d) => {
+                    // console.log( d );
+                    alert( d.message );
+                });
+                // .then((Response) => { console.log( Response ); });
             }
         </script>
     </head>
@@ -21,7 +38,7 @@
             <!-- <input type="text" name="name"> -->
             <button type="button" onclick="sendPost();">버튼</button>    
         </form>
-        
+        <button type="button" onclick="sendGet();">sendGet</button>   
         <button onclick="sendPost();">sendPost</button>
     </body>
 </html>
