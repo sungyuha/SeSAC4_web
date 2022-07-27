@@ -18,31 +18,31 @@ app.get("/receive3", function(req,res){
     res.render("receive3", req.query);
 });
 
-// app.post("/receive3", function(req,res){
-//     fs.readFile("./public/info.txt")
-//     .then((data) => {
-//         let arr = data.toString().split("//");
-//         if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
-//            res.rander("로그인이 되었습니다.");
-//         } else {
-//             res.rander("로그인이 실패하였습니다.");
-//         }
-// });
+app.post("/receive3", function(req,res){
+    fs.readFile("./public/info.txt")
+    .then((data) => {
+        let arr = data.toString().split("//");
+        if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
+           res.rander("로그인이 되었습니다.");
+        } else {
+            res.rander("로그인이 실패하였습니다.");
+        }
+});
 
     // arr = { "sesac", "sesac1234" };
 
-    app.post("/receive3", function(req,res){
-        if (err) throw err;
-        data = 
-        console.log(data);
+//     app.post("/receive3", function(req,res){
+//         if (err) throw err;
+//         data = 
+//         console.log(data);
         
-        console.log(data.toString().split("//")); 
-        if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
-            res.rander("로그인이 되었습니다.");
-         } else {
-             res.rander("로그인이 실패하였습니다.");
-         }    
-        //callback 함수 
+//         console.log(data.toString().split("//")); 
+//         if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
+//             res.rander("로그인이 되었습니다.");
+//          } else {
+//              res.rander("로그인이 실패하였습니다.");
+//          }    
+//         //callback 함수 
 });
 
 app.listen(port, ()=>{
