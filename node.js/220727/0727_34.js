@@ -24,15 +24,17 @@ app.post("/receive3", function(req,res){
     const i = `${req.body.id}//${req.body.pw}`;
     fs.readFile("./public/info.txt", i);
 
-    data = value//sesac1234
+    // console.log(i);
+
+    data = form.value//sesac1234
 
     let arr = data.split("//");
     if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
-        res.render("page.ejs", function(arr,data){ //성공했을 때 나올 view
+        res.render("page", function(err,data){ //성공했을 때 나올 view
             alert("로그인 성공했습니다.")
         });
     } else {
-        res.render("", function(arr,data){
+        res.send("page", function(err,data){
             if (err) throw err;
             alert("로그인 실패하였습니다.");
         });
