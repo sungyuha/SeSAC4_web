@@ -11,9 +11,16 @@ app.use( bodyParser.json() );
 app.get("/", function(req,res){
     res.render("index");
 })
+
+app.get("/test", function(req,res){
+    res.send("test"); // 문답으로 send한다(==보낸다) 
+})
+
 app.post("/receive", function(req,res){
     console.log( req.body );
-    res.send( req.body.name + "안녕" );
+    let name = req.body.name;
+    let msg = req.body.name + "안녕"; 
+    res.send( { name: name, message: msg} );
 })
 
 app.listen(port, ()=> {

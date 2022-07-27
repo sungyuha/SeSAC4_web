@@ -11,13 +11,14 @@
                     url: "http://localhost:9999/receive",
                     data: {
                         name: "codee"
-                    }
+                    } // axios로 처리 할때는 input 사용 하지 않아도 됨
                 }).then((Response) => { console.log( Response ); });
             }
         </script>
     </head>
     <body>
         <form action="/receive">
+            <!-- <input type="text" name="name"> -->
             <button type="button" onclick="sendPost();">버튼</button>    
         </form>
         
