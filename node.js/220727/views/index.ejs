@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Axios</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script>
+            function sendPost(){
+                axios({
+                    method: "post",
+                    url: "http://localhost:9999/receive",
+                    data: {
+                        name: "codee"
+                    }
+                }).then((Response) => { console.log( Response ); });
+            }
+        </script>
+    </head>
+    <body>
+        <form action="/receive">
+            <button type="button" onclick="sendPost();">버튼</button>    
+        </form>
+        
+        <button onclick="sendPost();">sendPost</button>
+    </body>
+</html>
