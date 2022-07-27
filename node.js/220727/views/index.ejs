@@ -31,14 +31,48 @@
                 });
                 // .then((Response) => { console.log( Response ); });
             }
+            function sendForm(){
+                var form = document.getElementById("form_info");
+                console.log( form );
+
+                form.checkValidity();
+                var result = form.checkValidity();
+                if ( !result ){
+                    form.reportValidity();
+
+                    return false;
+                }
+                console.log( result );
+
+                // console.log( form.name.value );
+                // console.log( form.age.value );
+
+                // axios({
+                //     method: "post",
+                //     url: "http://localhost:9999/receive",
+                //     data: {
+                //         name: form.name.value
+                //     }
+                // }).then((a) => {return a.data; })
+                // .then((d) => {
+                //     alert( d.message );
+                // });
+            }
         </script>
     </head>
     <body>
-        <form action="/receive">
+        <!-- <form action="/receive"> -->
             <!-- <input type="text" name="name"> -->
-            <button type="button" onclick="sendPost();">버튼</button>    
-        </form>
-        <button type="button" onclick="sendGet();">sendGet</button>   
+            <!-- <button type="button" onclick="sendPost();">버튼</button>    
+        </form> -->
+
+        <button onclick="sendGet();">sendGet</button>
         <button onclick="sendPost();">sendPost</button>
+
+        <form id="form_info">
+            <input type="text" name="name" required>
+            <input type="text" name="age" required>
+            <button type="button" onclick="sendForm()">sendForm</button>
+        </form>
     </body>
 </html>

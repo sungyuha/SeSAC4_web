@@ -19,7 +19,7 @@ app.get("/test", function(req,res){
 app.get("/receive", function(req,res){
     console.log( req.query );
     let name = req.query.name;
-    let msg = req.query.name + "GET";
+    let msg = req.query.name + "GET 안녕";
     res.send({name: name, message: msg});
 })
 app.post("/receive", function(req,res){
