@@ -7,7 +7,7 @@ const fs = require("fs").promises;
     
 //     console.log(data);
 
-//     console.log(data.toString());
+//     console.log(data.toString()); //callback 함수 
     
 // });
 

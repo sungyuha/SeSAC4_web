@@ -19,26 +19,17 @@ app.get("/receive3", function(req,res){
 });
 
 app.post("/receive3", function(req,res){
-    console.log("receive3-post");
-    res.render("page", req.body);
-    const i = `${req.body.id}//${req.body.pw}`;
-    fs.readFile("./public/info.txt", i);
+    fs.readFile("./public/info.txt")
+    .then((data) => {
+        let arr = data.toString().split("//");
+        if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
+           res.send("success");
+        } else {
+            res.send("fail");
+        }
+    });
 
-    // console.log(i);
-
-    data = info.value//sesac1234
-
-    let arr = data.split("//");
-    if ( arr[0] == req.body.id && arr[1] == req.body.pw ){
-        res.render("page", function(err,data){ //성공했을 때 나올 view
-            alert("로그인 성공했습니다.")
-        });
-    } else {
-        res.send("page", function(err,data){
-            if (err) throw err;
-            alert("로그인 실패하였습니다.");
-        });
-    }
+    
     // arr = { "sesac", "sesac1234" };
 });
 
