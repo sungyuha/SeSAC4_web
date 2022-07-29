@@ -29,7 +29,7 @@ app.get("/", test, test2, function(req, res){
 app.post("/upload", upload.single('userfile'), function(req,res){ //upload.single은 하나의 파일을 업로드 한다
     console.log(req.body);
     console.log(req.file);
-    res.send("Upload"); // 사용자가 파일을 업로드 할 때 사용
+    res.send("Upload"); // Upload는 사용자가 파일을 업로드 할 때 사용
 });
 app.post("/upload/array", upload.array('userfile'), function(req,res){
     console.log(req.body);
