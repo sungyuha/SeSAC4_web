@@ -4,22 +4,27 @@
     </head>
 
     <body>
-        <form action="/upload" method="POST" enctype="multipart/form-data"> <!-- 필수! form의 enctype 속성 -->
+        <form action="/upload" method="POST" enctype="multipart/form-data">
             <input type="file" name="userfile">
             <input type="text" name="name">
             <button>업로드</button>
+            <!-- 필수! form의 enctype 속성 -->
         </form>
         
-        <form action="/upload/array" method="POST" enctype="multipart/form-data"> <!-- 여러개를 업로드할때 array -->
-            <input type="file" name="userfile">
-            <button>업로드</button>
+        <form action="/upload/array" method="POST" enctype="multipart/form-data">
+            <input type="file" name="userfile" multiple>
+            <button>업로드</button> 
+            <!-- 한 번에 여러개의 파일을 올릴 때 사용 -->
+            <!-- 여러개를 업로드할때 array -->
         </form>
 
-        <form action="/upload/fields" method="POST" enctype="multipart/form-data"> <!-- fields를 잘 사용하지 않음 -->
+        <form action="/upload/fields" method="POST" enctype="multipart/form-data">
             <input type="file" name="userfile">
             <input type="file" name="userfile2">
             <input type="file" name="userfile3">
             <button>업로드</button>
+            <!-- fields를 잘 사용하지 않음 -->
+            <!-- 사용을 하려면 name 값 지정 및 하나하나 파일을 업로드 해야 함 -->
         </form>
     
     </body>
