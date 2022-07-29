@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>파일 업로드</title>
+    </head>
+
+    <body>
+        <form action="/upload" method="POST" enctype="multipart/form-data"> <!-- 필수! form의 enctype 속성 -->
+            <input type="file" name="userfile">
+            <input type="text" name="name">
+            <button>업로드</button>
+        </form>
+        
+        <form action="/upload/array" method="POST" enctype="multipart/form-data"> <!-- 여러개를 업로드할때 array -->
+            <input type="file" name="userfile">
+            <button>업로드</button>
+        </form>
+
+        <form action="/upload/fields" method="POST" enctype="multipart/form-data"> <!-- fields를 잘 사용하지 않음 -->
+            <input type="file" name="userfile">
+            <input type="file" name="userfile2">
+            <input type="file" name="userfile3">
+            <button>업로드</button>
+        </form>
+    
+    </body>
+</html>
