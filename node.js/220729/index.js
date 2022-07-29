@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const path = require("path");
 const upload = multer({
-    // dest: "uploads/" // 파일을 올리겠다
+    // dest: "uploads/" // 파일을 올리겠다, 파일 경로를 정해줌
     storage: multer.diskStorage({
         destination(req, file, done){
             done( null, 'uploads/');
