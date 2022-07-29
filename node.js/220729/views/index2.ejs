@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Index.ejs</title>
+    </head>
+
+    <body>
+        <form action="/upload" target="_blank" method="post" enctype="multipart/form-data">
+            <fieldset style="width:300px;">
+                <legend> 개인 정보 </legend>
+                아이디 : <input type="text" name="id" placeholder="아이디" required><br>
+                비밀번호 : <input type="password" name="pw" placeholder="비밀번호" required><br>
+                이름 : <input type="text" name="name" placeholder="이름"><br>
+                나이 : <input type="text" name="age" placeholder="나이"><br>
+            </fieldset>
+            <input type="file" name="userfile">
+            <button type="button">리셋</button>
+            <button type="submit" onclick="sendForm()">회원가입</button>
+        </form>
+    </body>
+</html>
