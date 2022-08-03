@@ -1,9 +1,9 @@
 exports.get_user = (req,res) => {
-    res.send("Get User");
+    res.send("index");
 }
 
 exports.a = (req,res) => {
-    
+
 }
 
 ///////////////////////
