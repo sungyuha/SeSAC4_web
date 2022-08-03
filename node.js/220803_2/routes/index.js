@@ -5,7 +5,8 @@ const userRouter = express.Router();
 const user = require("../controller/UserController");
 
 userRouter.get("/", user.index); // ~~/ 로 접속 시 UserController의 index 함수를 실행한다.
-userRouter.get("/register", user.register); 
+userRouter.get("/register", user.register);
+userRouter.post("/register", user.post_register);
 // ~~/register 로 접속 시 UserController의 register 함수를 실행한다.
 
 module.exports = userRouter; 
