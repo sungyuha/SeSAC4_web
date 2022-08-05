@@ -19,6 +19,6 @@ exports.insert = ( name, comment, cb ) => {
         if( err ) throw err;
 
         console.log( rows );
-        cb( rows.insertID );
+        cb( rows.insertId );
     });
 }

@@ -3,8 +3,7 @@
         <title> 방명록 </title>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        </script>
 
         <script>
             function writeComment(){
@@ -22,7 +21,7 @@
                     // data = { id: 8}
 
                     let html = 
-                    "<tr><td>" + data.id + "</td></td>" + form.name.value + "<td><td>" + form.comment.value + "</td></tr>";
+                    "<tr><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td></tr>";
 
                     $( "table" ).append(html);
                 });

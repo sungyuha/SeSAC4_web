@@ -9,13 +9,14 @@
                     var form = document.getElementById("form_comment");
                     axios({
                         method: 'post',
-                        url: 'http://localhost:8000/visitor/write',
+                        url: 'http://localhost:9999/visitor/write',
                         data: {
                             name: form.name.value,
                             comment: form.comment.value
                         }
                     })
-                    .then((rep) => { return rep.data; })
+                    .then((rep) => { return rep.data;// { id: 실제 아이디 } 
+                    })
                     .then((data) => {
                         // data = { id: 9 }
     
