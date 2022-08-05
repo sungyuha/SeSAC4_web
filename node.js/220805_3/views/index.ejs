@@ -3,26 +3,24 @@
         <title> 방명록 </title>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <script>
             function writeComment(){
                 var form = document.getElementById("form_comment");
                 axios({
                     method: 'post',
-                    url: 'http://localhost:9999/visitor/write',
+                    url: 'http://localhost:8000/visitor/write',
                     data: {
                         name: form.name.value,
                         comment: form.comment.value
                     }
                 })
-                .then((rep) => { return rep.data;})
+                .then((rep) => { return rep.data; })
                 .then((data) => {
-                    // data = { id: 8}
+                    // data = { id: 9 }
 
                     let html = 
-                    "<tr><td>" + data.id + "</td></td>" + form.name.value + "<td><td>" + form.comment.value + "</td></tr>";
+                    "<tr><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td></tr>";
 
                     $( "table" ).append(html);
                 });
@@ -34,7 +32,6 @@
             <form id="form_comment">
               <fieldset>
                 <legend>방명록 등록</legend>
-                <div><input name="id" type="hidden" placeholder="아이디"></div>
                 <div><input name="name" type="text" placeholder="사용자 이름"></div>
                 <div><input name="comment" type="text" placeholder="방명록"></div>
                 <div id="button-group">
@@ -55,23 +52,18 @@
             </tr>
             </thead>
             <tbody>
-                <% 
+                <%
                     for ( let i = 0; i < data.length; i++ ){
-                    <!-- // i = 0;
-                    // data[i] = { id:1, name: '홍길동', comment: '내가 왔다'}
-                    // a = { test:1 };
-                    // a.test
-                    // data[i].name -->
                 %>
                     <tr>
                         <td><%=data[i].id%></td>
-                        <td><%=data[i].name%></td> 
+                        <td><%=data[i].name%></td>
                         <td><%=data[i].comment%></td>
                     </tr>
                 <%
                     }
                 %>
             </tbody>
-        </table>   
+        </table>
     </body>
 </html>
