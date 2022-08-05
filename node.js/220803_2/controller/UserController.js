@@ -32,7 +32,7 @@ exports.post_login = async (req,res) => {
     for ( let i = 0; i < infos.length; i++ ){
         var info = infos[i].split("//");
         if ( info[0] == req.body.id && info[1] == req.body.pw ) flag = true;
-    } 
+    }
 
     if ( flag ) res.send("성공");
     else res.send("실패");
