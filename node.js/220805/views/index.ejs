@@ -1,27 +1,71 @@
 <html>
     <head>
-        <title>방명록 등록</title>
+        <title>방명록</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+        <script>
+            function writeComment(){
+                    var form = document.getElementById("form_comment");
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:8000/visitor/write',
+                        data: {
+                            name: form.name.value,
+                            comment: form.comment.value
+                        }
+                    })
+                    .then((rep) => { return rep.data; })
+                    .then((data) => {
+                        // data = { id: 9 }
+    
+                        let html = 
+                        "<tr><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td></tr>";
+    
+                        $( "table" ).append(html);
+                    });
+                }
+        </script>
     </head>
 
     <body>
-        <form action="/user/visitor" target="_blank" method="post">
+        <div>
+        <form id="form_comment">
             <fieldset style="width: 500px;">
                 <legend> 방명록 등록 </legend>
                 <input type="text" name="name" placeholder="사용자 이름"><br>
                 <input type="text" name="comment" placeholder="방명록"><br>
-                <button>등록</button>
+                <div id="button-group">
+                    <button type="button" onclick="writeComment();">등록</button>
+                </div>
             </fieldset>
         </form>
+        </div>
         <br>
         <br>
-        <table border="1">
+        <table id="visitor_list" border="1" cellspacing="0" cellpadding="6">
+            <thead>
             <tr>
-                <td>ID</td>
-                <td>작성자</td>
-                <td>방명록</td>
-                <td>수정</td>
-                <td>삭제</td>
+                <th>ID</th>
+                <th>작성자</th>
+                <th>방명록</th>
+                <th>수정</th>
+                <th>삭제</th>
             </tr>
+            </thead>
+            <tbody>
+                <%
+                    for ( let i = 0; i < data.length; i++ ){
+                %>
+                    <tr>
+                        <td><%=data[i].id%></td>
+                        <td><%=data[i].name%></td>
+                        <td><%=data[i].comment%></td>
+                    </tr>
+                <%
+                    }
+                %>
+            </tbody>
         </table>
     </body>
 </html>

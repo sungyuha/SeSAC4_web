@@ -14,7 +14,7 @@ exports.get_visitors = (cb) => {
     });
 }
 exports.insert = ( name, comment, cb ) => {
-    var sql = "INSERT INTO visitor(name, comment) VALUE('" + name + "', '" + comment + "')";
+    var sql = "INSERT INTO visitor(name, comment) VALUES('" + name + "', '" + comment + "')";
     cnn.query( sql, (err, rows) => {
         if( err ) throw err;
 

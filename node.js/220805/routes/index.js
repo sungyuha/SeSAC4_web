@@ -1,7 +1,7 @@
 const express = require("express");
-const VisitorRouter = express.Router();
 const visitor = require("../controller/VisitorController");
+const router = express.Router();
 
-VisitorRouter.get("/", visitor.index);
-
-module.exports = VisitorRouter;
+router.get("/", visitor.get_visitors);
+router.post("/wirte", visitor.post_comment);
+module.exports = router;
