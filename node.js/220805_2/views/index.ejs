@@ -21,7 +21,7 @@
                     // data = { id: 8}
 
                     let html = 
-                    "<tr><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td>" + "<td><button type='button' onclick='editComment(" + data.id +");'>수정</button> <button type='button' onclick='deleteComment(" + data.id + ");'>삭제</button></tr>";
+                    "<tr id='tr_" + data.id + "'><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td>" + "<td><button type='button' onclick='editComment(" + data.id +");'>수정</button> <button type='button' onclick='deleteComment(" + data.id + ");'>삭제</button></tr>";
 
                     $( "table" ).append(html);
                 });
