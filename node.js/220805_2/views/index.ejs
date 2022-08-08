@@ -62,11 +62,11 @@
                     method: 'patch',
                     url: 'http://localhost:9999/visitor/edit',
                     data: {
-                        id :id,
+                        id : id,
                         name : form.name.value,
                         comment : form.comment.value
                     }
-                }).then((rep) => {return rep.data; })
+                }).then((rep) => { return rep.data; })
                 .then((data) => {
                     alert ( data );
 
