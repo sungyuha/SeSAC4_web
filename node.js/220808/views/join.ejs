@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>회원가입</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+        <style>
+            form {
+                text-align: center;
+                margin-top: 50px;
+            }
+            legend {
+                position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;
+            }
+            label {
+                text-align: left;
+            }
+            h2 {
+                text-align: center;
+                margin-top: 150px;
+            }
+        </style>
+
+        <script>
+            function writeComment(){
+                var form = document.getElementById("form_comment");
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:9999/user/write',
+                    data: {
+                        id: form.id.value,
+                        name: form.name.value,
+                        pw: form.pw.value,
+                        email : form.email.value,
+                        phone: form.phone.value
+                    }
+                })
+                .then((rep) => { return rep.data;})
+                .then((data) => {
+                    
+
+                    let html = 
+                    "<tr id='tr_" + data.id + "'><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td>" + "<td><button type='button' onclick='editComment(" + data.id +");'>수정</button> "<td>" <button type='button' onclick='deleteComment(" + data.id + ");'>삭제</button></tr>";
+
+                    $( "table" ).append(html);
+                });
+            }
+
+            function sendForm(){
+                var form = document.getElementById("form_send");
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:9999/user/join',
+                    data: {
+                        id: form.id.value,
+                        name: form.name.value,
+                        pw: form.pw.value,
+                        email : form.email.value,
+                        phone: form.phone.value
+                    }
+                })
+                .then((rep) => {return rep.data;})
+                .then((data) => {
+                    alert( d.message );
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <h2>회원가입</h2>
+        </div>
+        <form action="form_send" method="POST">
+            <fieldset>
+                <legend>회원가입</legend>
+                    <label>
+                        이름
+                        <input class="form-control" type="text" name="name" placeholder="이름" aria-label="default input example" required>
+                    </label><br>
+                    <br>
+                    <label>
+                        아이디
+                        <input class="form-control" type="text" name="id" placeholder="아이디" aria-label="default input example" required>
+                    </label><br>
+                    <br>
+                    <label>
+                        비밀번호
+                        <input class="form-control" type="password" name="pw" placeholder="비밀번호" aria-label="default input example" required>
+                    </label><br>
+                    <br>
+                    <label>
+                        이메일
+                        <input class="form-control" type="text" name="email" placeholder="이메일" aria-label="default input example">
+                    </label><br>
+                    <br>
+                    <label>
+                        번호
+                        <input type="text" class="form-control" name="phone" placeholder="휴대폰번호" aria-label="default input example">
+                    </label><br>
+                    <br>
+                    <button type="submit" class="btn btn-outline-success" onclick="sendForm()">회원가입</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
