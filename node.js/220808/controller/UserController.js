@@ -1,7 +1,7 @@
 const user = require("../model/user");
 
 exports.get_user = async (req,res) => {
-    Visitor.get_users(function( result ){
+    user.get_users(function( result ){
         console.log( "result :", result);
         console.log("index");
         res.render("index", { data: result });

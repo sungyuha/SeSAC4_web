@@ -1,0 +1,12 @@
+Sequelize 
+- 자바스크립트 SQL로 변환해주는 친구
+- 다른 데이터베이스로의 전환도 유용하게 할 수 있다.
+- ORM ( Object - Relational Mapping )
+
+Sequelize 문법을 쓸 때는 항상 모델이 존재해야 한다.
+모델 = 테이블 구조
+
+만약, 테이블에 default 가 설정되어 있다.
+name, comment -> age 라는 컬럼이 존재.
+
+기존의 mysql은 insert 하면 insert 된 결과를 알려준다. ( 내가 지금 insert를 했고, insert된 id는 무엇이고, 바꾼 게 있는지 없는지 등등 )
