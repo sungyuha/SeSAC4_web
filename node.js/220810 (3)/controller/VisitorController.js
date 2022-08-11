@@ -18,7 +18,7 @@ exports.get_visitors = (req,res) => {
 }
 
 exports.post_comment = (req,res) => {
-    // console.log( req.body );
+    console.log( req.body );
 
     // Visitor.insert( req.body.name, req.body.comment, function( result ){
     //     res.send({ id: result });
