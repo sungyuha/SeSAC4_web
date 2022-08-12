@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script>
+            console.log( document.cookie );
+            document.cookie = "user=sesac; expires=Sat, 13 Aug 2022 13:00:00; path=/"; // (옵션)
+            console.log( document.cookie );
+
+            var cookieArr = document.cookie.split(";");
+            // for ( var i = 0; i < cookieArr.length; i++ ) 아래의 for문을 아래쪽처럼 쓸 수 있음
+            for ( var i in cookieArr ){
+                console.log( cookieArr[i] );
+            }
+        </script>
+    </head>
+</html>
