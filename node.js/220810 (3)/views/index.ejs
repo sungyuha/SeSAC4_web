@@ -9,7 +9,7 @@
                 var form = document.getElementById("form_comment");
                 axios({
                     method: 'post',
-                    url: 'https://localhost:8000/visitor/write',
+                    url: 'http://localhost:8000/visitor/write',
                     data: {
                         name: form.name.value,
                         comment: form.comment.value
@@ -30,7 +30,7 @@
             function editComment( id ){
                 axios({
                     method: 'get',
-                    url: 'https://localhost:8000/visitor/get?id=' + id
+                    url: 'http://localhost:8000/visitor/get?id=' + id
                 })
                 .then((rep) => { return rep.data })
                 .then((data) => {
@@ -60,7 +60,7 @@
                 var form = document.getElementById("form_comment");
                 axios({
                     method: 'patch',
-                    url: 'https://localhost:8000/visitor/edit',
+                    url: 'http://localhost:8000/visitor/edit',
                     data: {
                         id : id,
                         name : form.name.value,
@@ -82,7 +82,7 @@
             function deleteComment( id ) {
                 axios({
                     method: 'delete',
-                    url: 'https://localhost:8000/visitor/delete',
+                    url: 'http://localhost:8000/visitor/delete',
                     data: { id: id }
                 }).then((rep) => { return rep.data; } )
                 .then((data) => { 
