@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+ul, ol,
+fieldset, legend {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* header */
+header {
+    background-color: pink;
+    height: 100px;
+}
+
+.icon_menu {
+    display: block;
+}
+ 
+.icon_menu a {
+    display: block;
+    padding: 8px 12px;
+}
+
+.list_menu {
+    display: none;
+}
+
+.list_menu a {
+    margin: 5px 8px;
+}
+
+.header-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .slide_menu */
+.slide_menu {
+    background-color: gold;
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.slide_menu.d-none {
+    display: none;
+}
+
+.slide_menu_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.slide_menu_container > a {
+    margin: 12px 0;
+}
+
+/* 실습 2에 대한 추가 코드 */
+.card_list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+
+.card_wrapper {
+    width: 50%;
+    /* border: 2px solid green; */
+}
+
+.card_item {
+    margin: 8px;
+    /* border: 2px solid blue; */
+}
+
+.card_item > img {
+    width: 100%;
+}
+
+.card_item .tit {
+    font-size: 18px;
+    font-weight: 700;;
+}
+
+.card_item .desc {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .inner {
+        max-width: 1200px;
+    }
+}
+
+/* 992px 이상일 때 */
+@media screen and (min-width: 992px) {
+    body {
+        background-color: lavender;
+    }
+
+    .icon_menu {
+        display: none;
+    }
+
+    .list_menu {
+        display: block;
+    }
+
+    /* 실습 2에 대한 코드 */
+    .card_wrapper {
+        width: 20%;
+    }
+    
+    .card_item .desc {
+        display: block;
+    }
+}
