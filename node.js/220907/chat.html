@@ -18,7 +18,7 @@
             .my-chat div {
                 background-color: yellow;
             }
-            .other-chat {
+            .other-chat div {
                 background-color: bisque;
             }
         </style>
@@ -31,14 +31,14 @@
         <script>
             var id = "";
             var socket = io.connect();
-            socket.on("info", function(data) {});
+            socket.on("info", function(data) {console.log( data ); id = data;});
 
             function send(){ // send로 메시지가 들어옴
                 console.log(id); // id를 보내지 않아도 됨
                 let msg = document.getElementById("message").value;
                 // socket.emit("send", {id, msg)};
                 socket.emit("send", {id: id, msg: msg});
-                document.getElementById("message").value;
+                document.getElementById("message").value = "";
             }
             socket.on("newMessage", function(data){
                 // data = { id: ~~~, msg: ~~~ }
@@ -60,6 +60,13 @@
                 // <div class="my-chat">
                     // <div>{msg}</div>
                 // <div>
+                chat_list.appendChild(div);
+            });
+            socket.on("notice", function(data){
+                let chat_list = document.getElementById("chat-list");
+                let div = document.createElement("div");
+                div.textContent = data;
+
                 chat_list.appendChild(div);
             });
         </script>
