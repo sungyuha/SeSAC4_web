@@ -13,8 +13,8 @@ io.on("connection", function(socket){   // io는 socket 그 자체
     socket.emit("hello", "server hello");   // 
     socket.on("click", function(data){
         console.log( "click click" );
-        socket.emit("clickResponse", 'success');
-        io.emit("clickResponse", 'io success'); // io는 연결 된 모든 클라이언트에게 전체 연결
+        socket.emit("clickResponse", 'hello');
+        io.emit("clickResponse", '안녕!!.'); // io는 연결 된 모든 클라이언트에게 전체 연결
     })
 });
 

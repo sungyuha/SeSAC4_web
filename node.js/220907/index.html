@@ -16,10 +16,11 @@
                 console.log( "data : ", data );  
             });
 
-            function btnclick(){
+            function btnclick_hello(){
                 console.log("click");
                 socket.emit("click", "click!!");
             }
+
             socket.on("clickResponse", function(data){
                 console.log(" response : ", data );
             })
