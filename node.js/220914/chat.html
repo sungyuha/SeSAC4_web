@@ -26,47 +26,42 @@
 
     <body>
         <div id="chat-list" class="chat-list"></div>
+        <select id ="nick-list">
+            <option value="전체">전체</option>
+        </select>
         <input type="text" id="message">
         <button type="button" onclick="send();">전송</button>
         <script>
             var nickname = prompt("닉네임을 입력해주세요.");
-            // var id = "";
             var socket = io.connect();
             socket.emit("info2", { nickname: nickname});
-            // socket.on("info", function(data) {console.log( data ); id = data;});
+            // socket.on("info", function(data){ console.log( data ); id = data;});
 
             function send(){ // send로 메시지가 들어옴
-                // console.log(id); // id를 보내지 않아도 됨
                 let msg = document.getElementById("message").value;
-                // socket.emit("send", {id, msg)};
-                socket.emit("send", { msg: msg });
+                let nick = document.getElementById("nick-list").value;
+                // console.log(nick);
+                socket.emit("send", { msg: msg , to: nick });
                 document.getElementById("message").value = "";
             }
             socket.on("newMessage", function(data){
-                // data = { id: ~~~, msg: ~~~ }
+                console.log( data );
                 let chat_list = document.getElementById("chat-list");
-                let div = document.createElement("div"); // <div></div>
-                let div_chat = document.createElement("div"); // <div></div>
+                let div = document.createElement("div");
+                let div_chat = document.createElement("div");
                 let span = document.createElement("span");
-                // <div></div>
 
-                div_chat.textContent = data.msg; // <div>{msg}</div>
+                div_chat.textContent = data.msg;
 
+                if( data.is_dm ) div_chat.textContent = "(DM)" + div_chat.textContent;
                 if ( data.nickname == nickname ) { div.classList.add("my-chat"); }
                 else { 
                     span.textContent = data.nickname;
                     div.appendChild(span);
                     div.classList.add("other-chat"); 
                 }
-                // <div class="my-chat"></div>
-
-                // div => <div class="my-chat"></div>
-                // div_chat => <div>{msg}</div>
 
                 div.appendChild(div_chat);
-                // <div class="my-chat">
-                    // <div>{msg}</div>
-                // <div>
                 chat_list.appendChild(div);
             });
             socket.on("notice", function(data){
@@ -75,6 +70,33 @@
                 div.textContent = data;
 
                 chat_list.appendChild(div);
+            });
+            socket.on("list", function(list){
+                // list = { id~~: nickname, id~~~~: nickname };
+                let nick_list = document.getElementById("nick-list");
+                while (nick_list.firstChild){
+                    nick_list.removeChild(nick_list.lastChild);
+                }
+                let option = document.createElement("option");
+                option.text = "전체";
+                option.value = "전체";
+                nick_list.appendChild(option);
+
+                var a = {
+                    key1: '1',
+                    key2: '2',
+                    key3: '3'
+                };
+                for( let [key,value] of Object.entries(a)){
+                    // key = "key1", value="1";
+                    // key = "key2", value="2";
+                }
+                for( let [key,value] of Object.entries(list)){
+                    let option = document.createElement("option");
+                    option.text = value;
+                    option.value = value;
+                    nick_list.appendChild(option);
+                }
             });
         </script>
     </body>

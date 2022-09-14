@@ -1,0 +1,5 @@
+io.to().emit("newMessage", data);
+
+// to()안에 
+
+socket으로 dm 구현
