@@ -4,17 +4,21 @@
         <script src="https://kit.fontawesome.com/7d78f8313d.js" crossorigin="anonymous"></script>
 
         <style>
+            .chat-list > .box {
+                text-align: center;
+            }
             #nick-list {
                 border: outset;
-                padding: 10px 5px;
+                padding: 10px;
                 border-radius: 10px;
             }
             .chat-list {
                 background-color: rgb(246, 246, 246);
                 height: 50%;
-                width: 20%;
+                width: 380px;
                 padding: 10px;
                 margin-bottom: 5px;
+                border-radius: 15px;
             }
             .chat-list div div {
                 display: inline-block;
@@ -63,7 +67,11 @@
     </head>
 
     <body>
-        <div id="chat-list" class="chat-list"></div>
+        <div id="chat-list" class="chat-list">
+            <!-- <div class="box">
+                <div>chat방</div>
+            </div> -->
+        </div>
         <select id ="nick-list">
             <option value="전체">전체</option>
         </select>
@@ -73,7 +81,7 @@
             <i class="fa-plus"></i>
         </button>
         <form id="form_info">
-
+            
         </form>
         <script>
             var nickname = prompt("닉네임을 입력해주세요.");
@@ -189,6 +197,11 @@
                 }
             }
         });
+        // 추가 사항
+        /* 1. 플러스 아이콘을 누르면 이모지랑 사진 전송할 수 있는 버튼 생성
+        2. 이모지, 사진 채팅으로 전송
+        3. 000 님이 입장하셨습니다 꾸미기
+        */
         </script>
     </body>
 </html>
