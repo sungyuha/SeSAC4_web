@@ -1,12 +1,20 @@
 <html>
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
-    
+        <script src="https://kit.fontawesome.com/7d78f8313d.js" crossorigin="anonymous"></script>
+
         <style>
+            #nick-list {
+                border: outset;
+                padding: 10px 5px;
+                border-radius: 10px;
+            }
             .chat-list {
-                background-color: rgb(149, 201, 221);
+                background-color: rgb(246, 246, 246);
                 height: 50%;
+                width: 20%;
                 padding: 10px;
+                margin-bottom: 5px;
             }
             .chat-list div div {
                 display: inline-block;
@@ -14,21 +22,29 @@
                 border-radius: 8px;
                 font-weight: bold;
                 font-size: 14px;
+                background-color: rgb(49, 49, 49);
+                color:rgb(246, 246, 246);
             }
             .my-chat {
                 text-align: right;
             }
             .my-chat div {
-                background-color: yellow;
+                background-color: rgb(49, 49, 49);
             }
             .other-chat div {
                 background-color: white;
             }
             input[type="text" i] {
-            padding: 10px 10px;
-            border-radius: 20px;
-            background-color: antiquewhite;
-            border: none;
+            padding: 10px 50px;
+            border-radius: 10px;
+            background-color: white;
+            border: outset;
+            }
+            .fa-regular {
+                border-radius: 10px;
+                background-color: white;
+                padding: 10px 20px;
+                border: outset;
             }
         </style>
     </head>
@@ -39,7 +55,10 @@
             <option value="전체">전체</option>
         </select>
         <input type="text" id="message">
-        <button type="button" onclick="send();">전송</button>
+        <i class="fa-regular fa-comment-dots" onclick="send();" style="cursor: pointer;"></i>
+        <!-- <button type="button" onclick="plus();">
+            <i class="fa-regular fa-plus"></i>
+        </button> -->
         <script>
             var nickname = prompt("닉네임을 입력해주세요.");
             var socket = io.connect();
@@ -64,10 +83,10 @@
 
                 if( data.is_dm ) div_chat.textContent = "(DM)" + div_chat.textContent;
                 if ( data.nickname == nickname ) { div.classList.add("my-chat"); }
-                else { 
+                else {
                     span.textContent = data.nickname;
                     div.appendChild(span);
-                    div.classList.add("other-chat"); 
+                    div.classList.add("other-chat");
                 }
 
                 div.appendChild(div_chat);
@@ -109,4 +128,16 @@
             });
         </script>
     </body>
+    <script>
+        $('input#message').keydown(function(key) {
+
+            if (key.keyCode == 13 && $('#name').val()!='' && $('#message').val()!=''){
+            socket.emit('message',{
+            name :$('#name').val(),
+            message:$('#message').val(),
+            date: new Date().toUTCString()
+            });
+        }
+    });
+    </script>
 </html>
