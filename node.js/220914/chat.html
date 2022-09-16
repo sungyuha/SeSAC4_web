@@ -24,6 +24,7 @@
                 font-size: 14px;
                 background-color: rgb(49, 49, 49);
                 color:rgb(246, 246, 246);
+                position: relative;
             }
             .my-chat {
                 text-align: right;
@@ -35,7 +36,7 @@
                 background-color: white;
             }
             input[type="text" i] {
-            padding: 10px 50px;
+            padding: 10px 45px;
             border-radius: 10px;
             background-color: white;
             border: outset;
@@ -45,6 +46,18 @@
                 background-color: white;
                 padding: 10px 20px;
                 border: outset;
+            }
+            .plus_btn {
+                border: solid 2px rgb(239, 239, 239);
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                background-color: rgb(227, 219, 255);
+                font-weight: bold;
+                font-size: 30px;
+                position: absolute;
+                top: 610px;
+                left: 330px;
             }
         </style>
     </head>
@@ -56,9 +69,9 @@
         </select>
         <input type="text" id="message">
         <i class="fa-regular fa-comment-dots" onclick="send();" style="cursor: pointer;"></i>
-        <!-- <button type="button" onclick="plus();">
-            <i class="fa-regular fa-plus"></i>
-        </button> -->
+        <button class="plus_btn" type="button" onclick="plus();" style="cursor: pointer;">
+            <i class="fa-plus"></i>
+        </button>
         <script>
             var nickname = prompt("닉네임을 입력해주세요.");
             var socket = io.connect();
@@ -126,18 +139,53 @@
                     nick_list.appendChild(option);
                 }
             });
+
+            $('input#message').keydown(function(key) {
+
+                if (key.keyCode == 13 && $('#nick-list').val()!='' && $('#message').val()!=''){
+                socket.emit('message',{
+                name :$('#nick-list').val(),
+                message:$('#message').val(),
+                date: new Date().toUTCString()
+                });
+                }
+            });
+
+            new Vue({
+            el: '#app',
+            data: {
+                chatColor: '#0084ff',
+                colorPanelShown: false,
+                newMessage: '',
+                tutorialSeen: false,
+                colors: ['#0084ff','#ffc300','#4af844',
+                                '#7646ff','#a695c7','#ff5ca1',
+                                '#fa3c4c','#f56b78','#33343f'],
+                messages: [
+                    {id: 0, text: 'Hi there', primary: false, date: moment().format('hh:mm')},
+                    {id: 1, text: 'Hi rob!', primary: true, date: moment().format('hh:mm')},
+                    {id: 2, text: 'This is better than messenger xD', primary: false, date: moment().format('hh:mm')},
+                    {id: 3, text: 'ofc', primary: true, date: moment().format('hh:mm')},
+                    {id: 4, text: 'everything is better than messenger.. XD', primary: true, date: moment().format('hh:mm')},
+                    {id: 2, text: 'ok, chill bro ಠ_ಠ thats just ez script made with vue.js', primary: false, date: moment().format('hh:mm')},
+                    {id: 4, text: 'but look how it is cute <3', primary: true, date: moment().format('hh:mm')}
+                ]
+            },
+            methods: {
+                send: function(){
+                    if(this.newMessage.length > 0){
+                        let lastId = this.messages[this.messages.length-1];
+                        this.messages.push({id: lastId+1, text: this.newMessage, primary: true, date: moment().format('hh:mm')});
+                        this.newMessage = '';
+                        this.tutorialSeen = true;
+                    }
+                },
+                setColor: function(color){
+                    this.chatColor = color;
+                    this.colorPanelShown = false;
+                }
+            }
+        });
         </script>
     </body>
-    <script>
-        $('input#message').keydown(function(key) {
-
-            if (key.keyCode == 13 && $('#name').val()!='' && $('#message').val()!=''){
-            socket.emit('message',{
-            name :$('#name').val(),
-            message:$('#message').val(),
-            date: new Date().toUTCString()
-            });
-        }
-    });
-    </script>
 </html>
