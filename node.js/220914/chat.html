@@ -36,7 +36,7 @@
                 background-color: white;
             }
             input[type="text" i] {
-            padding: 10px 45px;
+            padding: 10px 40px;
             border-radius: 10px;
             background-color: white;
             border: outset;
@@ -52,8 +52,8 @@
                 border-radius: 50%;
                 width: 50px;
                 height: 50px;
-                background-color: rgb(227, 219, 255);
-                font-weight: bold;
+                background-color: white;
+                color: rgb(49, 49, 49);
                 font-size: 30px;
                 position: absolute;
                 top: 610px;
@@ -72,6 +72,9 @@
         <button class="plus_btn" type="button" onclick="plus();" style="cursor: pointer;">
             <i class="fa-plus"></i>
         </button>
+        <form id="form_info">
+
+        </form>
         <script>
             var nickname = prompt("닉네임을 입력해주세요.");
             var socket = io.connect();
