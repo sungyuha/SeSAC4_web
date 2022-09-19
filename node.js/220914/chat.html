@@ -38,6 +38,7 @@
                 color:rgb(246, 246, 246);
                 margin-left: 3%;
                 margin-top: 3px;
+                -webkit-scrollbar: none;
             }
             .chat-list div {
                 border-radius: 20px;
@@ -98,8 +99,12 @@
         <button class="plus_btn" type="button" onclick="plus();" style="cursor: pointer;">
             <i class="fa-plus"></i>
         </button>
+        <!-- 플로팅 버튼 펼쳤을 때 -->
+        <div  class="box">
+
+        </div>
         <form id="form_info">
-            
+            <button class="plus_btn" type="button" onclick="plus();" style="cursor: pointer;">
         </form>
         <script>
             var nickname = prompt("닉네임을 입력해주세요.");
@@ -175,16 +180,16 @@
 
             // 스크롤 자동 갱신
             function scroll() {
-            let chat = document.querySelector(“.box”);
-            chat.scrollTop = chat.scrollHeight;
+                let chat = document.querySelector('.box');
+                chat.scrollTop = chat.scrollHeight;
             };
-            
+
         // 추가 사항
         /* 1. 플러스 아이콘을 누르면 이모지랑 사진 전송할 수 있는 버튼 생성
         2. 이모지, 사진 채팅으로 전송
         3. 전송 버튼 누르지 않아도 메시지 전송
         4. 자바스크립트와 css 파일 따로 분리
-        5. 스크롤 자동 갱신
+        5. 이모지 기능 추가
         */
         </script>
     </body>
