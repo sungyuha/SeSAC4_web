@@ -9,23 +9,24 @@
                 padding: 10px;
                 border-radius: 10px;
                 text-align: center;
+                width: 5%;
             }
             .chat-list {
                 background-color: rgb(246, 246, 246);
+                /* background: radial-gradient(#f6f6f6, #edf0f3); */
                 height: 50%;
-                width: 380px;
+                width: 20%;
                 padding: 10px;
                 margin-bottom: 5px;
                 border-radius: 15px;
+                overflow-y: auto;
+                border: 1px solid #edf0f3;
+                box-shadow: #dbdee0;
+                text-align: center;
+                min-width: 20%;
             }
-            .div {
-                text-align: center;
-                background-color: #4d6cf2;
-                color: white;
-                border-radius: 20px;
-                text-align: center;
-                font-size: 12.5px;
-                /* margin-top: 5px; */
+            .chat-list::-webkit-scrollbar-thumb{
+                border-radius: 5px;
             }
             .chat-list div div {
                 display: inline-block;
@@ -35,13 +36,20 @@
                 font-size: 14px;
                 background-color: rgb(49, 49, 49);
                 color:rgb(246, 246, 246);
-                position: relative;
+                margin-left: 3%;
+            }
+            .chat-list div {
+                border-radius: 20px;
+                font-size: 12.5px;
             }
             .my-chat {
                 text-align: right;
             }
             .my-chat div {
                 background-color: rgb(49, 49, 49);
+            }
+            .other-chat{
+                text-align: left;
             }
             .other-chat div {
                 background-color: white;
@@ -51,24 +59,26 @@
             border-radius: 10px;
             background-color: white;
             border: outset;
+            width: 13%;
             }
             .fa-regular {
                 border-radius: 10px;
                 background-color: white;
                 padding: 10px 20px;
                 border: outset;
+                width: 1%;
             }
             .plus_btn {
                 border: solid 2px rgb(239, 239, 239);
                 border-radius: 50%;
-                width: 50px;
-                height: 50px;
+                width: 3%;
+                height: 4.5%;
                 background-color: white;
                 color: rgb(49, 49, 49);
                 font-size: 30px;
                 position: absolute;
-                top: 610px;
-                left: 330px;
+                top: 46%;
+                left: 17%;
             }
         </style>
     </head>
@@ -157,17 +167,6 @@
                     nick_list.appendChild(option);
                 }
             });
-
-            // $('input#message').keydown(function(key) {
-
-            //     if (key.keyCode == 13 && $('#nick-list').val()!='' && $('#message').val()!=''){
-            //     socket.emit('message',{
-            //     name :$('#nick-list').val(),
-            //     message:$('#message').val(),
-            //     date: new Date().toUTCString()
-            //     });
-            //     }
-            // });
 
         // 추가 사항
         /* 1. 플러스 아이콘을 누르면 이모지랑 사진 전송할 수 있는 버튼 생성
