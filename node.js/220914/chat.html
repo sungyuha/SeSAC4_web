@@ -37,6 +37,7 @@
                 background-color: rgb(49, 49, 49);
                 color:rgb(246, 246, 246);
                 margin-left: 3%;
+                margin-top: 3px;
             }
             .chat-list div {
                 border-radius: 20px;
@@ -71,8 +72,8 @@
             .plus_btn {
                 border: solid 2px rgb(239, 239, 239);
                 border-radius: 50%;
-                width: 50px;
-                height: 50px;
+                width: 45px;
+                height: 45px;
                 background-color: white;
                 color: rgb(49, 49, 49);
                 font-size: 30px;
@@ -171,9 +172,19 @@
             $('.plus_btn').on('click', function(){
                 $(this).toggleClass('active');
             });
+
+            // 스크롤 자동 갱신
+            function scroll() {
+            let chat = document.querySelector(“.box”);
+            chat.scrollTop = chat.scrollHeight;
+            };
+            
         // 추가 사항
         /* 1. 플러스 아이콘을 누르면 이모지랑 사진 전송할 수 있는 버튼 생성
         2. 이모지, 사진 채팅으로 전송
+        3. 전송 버튼 누르지 않아도 메시지 전송
+        4. 자바스크립트와 css 파일 따로 분리
+        5. 스크롤 자동 갱신
         */
         </script>
     </body>
