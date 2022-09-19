@@ -4,13 +4,11 @@
         <script src="https://kit.fontawesome.com/7d78f8313d.js" crossorigin="anonymous"></script>
 
         <style>
-            .chat-list > .box {
-                text-align: center;
-            }
             #nick-list {
                 border: outset;
                 padding: 10px;
                 border-radius: 10px;
+                text-align: center;
             }
             .chat-list {
                 background-color: rgb(246, 246, 246);
@@ -19,6 +17,15 @@
                 padding: 10px;
                 margin-bottom: 5px;
                 border-radius: 15px;
+            }
+            .div {
+                text-align: center;
+                background-color: #4d6cf2;
+                color: white;
+                border-radius: 20px;
+                text-align: center;
+                font-size: 12.5px;
+                /* margin-top: 5px; */
             }
             .chat-list div div {
                 display: inline-block;
@@ -151,56 +158,20 @@
                 }
             });
 
-            $('input#message').keydown(function(key) {
+            // $('input#message').keydown(function(key) {
 
-                if (key.keyCode == 13 && $('#nick-list').val()!='' && $('#message').val()!=''){
-                socket.emit('message',{
-                name :$('#nick-list').val(),
-                message:$('#message').val(),
-                date: new Date().toUTCString()
-                });
-                }
-            });
+            //     if (key.keyCode == 13 && $('#nick-list').val()!='' && $('#message').val()!=''){
+            //     socket.emit('message',{
+            //     name :$('#nick-list').val(),
+            //     message:$('#message').val(),
+            //     date: new Date().toUTCString()
+            //     });
+            //     }
+            // });
 
-            new Vue({
-            el: '#app',
-            data: {
-                chatColor: '#0084ff',
-                colorPanelShown: false,
-                newMessage: '',
-                tutorialSeen: false,
-                colors: ['#0084ff','#ffc300','#4af844',
-                                '#7646ff','#a695c7','#ff5ca1',
-                                '#fa3c4c','#f56b78','#33343f'],
-                messages: [
-                    {id: 0, text: 'Hi there', primary: false, date: moment().format('hh:mm')},
-                    {id: 1, text: 'Hi rob!', primary: true, date: moment().format('hh:mm')},
-                    {id: 2, text: 'This is better than messenger xD', primary: false, date: moment().format('hh:mm')},
-                    {id: 3, text: 'ofc', primary: true, date: moment().format('hh:mm')},
-                    {id: 4, text: 'everything is better than messenger.. XD', primary: true, date: moment().format('hh:mm')},
-                    {id: 2, text: 'ok, chill bro ಠ_ಠ thats just ez script made with vue.js', primary: false, date: moment().format('hh:mm')},
-                    {id: 4, text: 'but look how it is cute <3', primary: true, date: moment().format('hh:mm')}
-                ]
-            },
-            methods: {
-                send: function(){
-                    if(this.newMessage.length > 0){
-                        let lastId = this.messages[this.messages.length-1];
-                        this.messages.push({id: lastId+1, text: this.newMessage, primary: true, date: moment().format('hh:mm')});
-                        this.newMessage = '';
-                        this.tutorialSeen = true;
-                    }
-                },
-                setColor: function(color){
-                    this.chatColor = color;
-                    this.colorPanelShown = false;
-                }
-            }
-        });
         // 추가 사항
         /* 1. 플러스 아이콘을 누르면 이모지랑 사진 전송할 수 있는 버튼 생성
         2. 이모지, 사진 채팅으로 전송
-        3. 000 님이 입장하셨습니다 꾸미기
         */
         </script>
     </body>
