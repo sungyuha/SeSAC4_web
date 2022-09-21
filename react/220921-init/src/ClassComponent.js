@@ -22,7 +22,7 @@ class ClassComponent extends Component {
     //     <div>
     //         {props.children}
     //         <h2>ClassComponent - function</h2>
-    //         <H5>name : {props.name}</H5>
+    //         <h5>name : {props.name}</h5>
     //         <h5>location : {props.location}</h5>
     //     </div>
     // )
@@ -34,4 +34,5 @@ ClassComponent.defaultProps = {
 }
 
 export default ClassComponent;
+// export는 내보내고 import로 받는다.
 // class는 render라는 함수 안에 리턴해야 한다.
