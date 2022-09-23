@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class StateClass extends Component {
+class StateClass extends Component { // state란 컴포넌트 내부에서 바뀔 수 있는 값
     /*constructor(props) { // constructor는 기존 버젼
         super(props);
 
@@ -8,7 +8,8 @@ class StateClass extends Component {
             name: "SeSAC",
             list: ['s','e','s','a','c']
         };
-    }*/
+    }*/ // props는 컴포넌트가 사용되는 과정에서 부모 컴포넌트가 설정하는 값
+    // 컴포넌트 자신은 해당 props를 읽기 전용으로만 사용 가능
     state = { // 최신문법 -> 구조체를 사용하지 않고도 사용 가능
         name: "SeSAC",
         cnt: 0,

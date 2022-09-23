@@ -3,13 +3,9 @@ import React, {useState} from "react";
 function StateFunction () { // 함수형 Component
     const [msg, setMsg] = useState(""); // msg: name 같은 친구, setMsg은 변경하기 위한 함수
     const [list, setList] = useState([]);
-    // this.state {
-        // msg: ""
-    // }
 
     function changeMsg(){
         setMsg("메세지")
-        // setState({msg: "메세지"})
     }
 
     return (
