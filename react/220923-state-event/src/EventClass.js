@@ -30,7 +30,7 @@ class EventClass extends Component {
         )
     }
 }
-// class형 컴포넌트 안에서는 this 붙여소
+// class형 컴포넌트 안에서는 this 붙여서
 // 화살표 함수 사용하기
 
 export default EventClass;
