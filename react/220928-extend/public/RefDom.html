@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>validation</title>
+ 
+        <style>
+            .success {
+                background-color: green;
+            }
+ 
+            .failure {
+                background-color: red;
+            }
+        </style>
+ 
+        <script>
+            function validate() {
+                var input = document.getElementById('password');
+                input.className = '';
+ 
+                if( input.value === '0000' ) {
+                    input.className = "success";
+                } else {
+                    input.className = "failure";
+                }
+            }
+        </script>
+    </head>
+ 
+    <body>
+        <input type="password" id="password"></input>
+        <button onclick="validate()">Validate</buttton>
+    </body>
+</html>
+<!-- 리액트에서는 DOM에 접근하지 않아도 state로 구현이 가능함 -->
