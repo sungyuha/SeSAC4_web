@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom/client';
 // import CSSModule from './CSSModule';
 // import StyledComponent from './StyledComponent';  // StyledComponent 변수명이고 './StyledComponent' 파일 이름
 import Use_65 from './Use65';
+import Use_66 from './Use66';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +29,6 @@ root.render(
     <hr />
     <StyledComponent />
     <hr /> */}
-    <Use_65 />
+    <Use_66 />
   </React.StrictMode>
 );
