@@ -4,10 +4,11 @@ import ReactDOM from 'react-dom/client';
 // import Reducer from './Reducer';
 // import Memo from './Memo';
 // import HookRef from './HookRef';
-import Origin from './Origin';
-import UseSass from './UseSass';
-import CSSModule from './CSSModule';
-import StyledComponent from './StyledComponent';  // StyledComponent 변수명이고 './StyledComponent' 파일 이름
+// import Origin from './Origin';
+// import UseSass from './UseSass';
+// import CSSModule from './CSSModule';
+// import StyledComponent from './StyledComponent';  // StyledComponent 변수명이고 './StyledComponent' 파일 이름
+import Use_65 from './Use65';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,13 +20,14 @@ root.render(
     <Memo />
     <hr />
     <HookRef /> */}
-    <Origin />
+    {/* <Origin />
     <hr />
     <UseSass />
     <hr />
     <CSSModule />
     <hr />
     <StyledComponent />
-    <hr />
+    <hr /> */}
+    <Use_65 />
   </React.StrictMode>
 );

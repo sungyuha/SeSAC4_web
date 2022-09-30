@@ -1,0 +1,72 @@
+@import '~include-media/dist/include-media';
+@import '~open-color/open-color';
+
+
+$a: blue;
+$b : rgb(98, 98, 246);
+$c: rgb(12, 146, 101);
+$d : rgb(71, 170, 227);
+$e: blueviolet;
+$f : white;
+$g: black;
+
+.U_65 {
+    border-radius: 50px;
+    
+    .b01{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        top: 10px;
+        left: 10px;
+        &.a {
+            background-color: $a;
+            position: absolute;
+            left: 100px;
+        }
+        &.b {
+            position: absolute;
+            background-color: $b;
+            top: 50px;
+            left: 150px;
+        }
+        &.c {
+            position: absolute;
+            background-color: $c;
+            top: 60px;
+            left: 190px;
+        }
+        &.d {
+            position: absolute;
+            background-color: $d;
+            top: 60px;
+            left: 250px;
+        }
+        &.e {
+            position: absolute;
+            background-color: $e;
+            top: 50px;
+            left: 300px;
+        }
+        &.f {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: $f;
+            top: 20px;
+            left: 120px;
+        }
+        &.g {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: $g;
+            top: 25px;
+            left: 120px;
+        }
+        // &.i {
+        //     margin-top: 200px;
+        // }
+    }
+}
