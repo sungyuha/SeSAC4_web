@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom/client';
 import Origin from './Origin';
 import UseSass from './UseSass';
 import CSSModule from './CSSModule';
-import StyledComponent from './StyledComponent'; 
+import StyledComponent from './StyledComponent';  // StyledComponent 변수명이고 './StyledComponent' 파일 이름
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,5 +26,6 @@ root.render(
     <CSSModule />
     <hr />
     <StyledComponent />
+    <hr />
   </React.StrictMode>
 );
