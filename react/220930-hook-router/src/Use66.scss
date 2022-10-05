@@ -5,6 +5,41 @@ $a : pink;
 $b : yellow;
 $c : green;
 
+$pink: pink;
+$yellow: yellow;
+$green: green;
+@mixin bounce ($bounce, $size){
+    @keyframes #{$bounce} {
+        0%{top: 0px; left: 0px;}
+        25%{top:0px; left: $size}
+        50%{left: $size; top: $size;}
+        75%{left: 0px; top: $size;}
+        100%{top: 0px; left: 0px;}
+    }
+}
+.ball{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 50%;
+    animation: 3s ease-in infinite;
+    &.pink{
+        background:$pink;
+        animation-name: animation1;
+    }
+    &.yellow{
+        background:$yellow;
+        animation-name: animation2;
+    }
+    &.green{
+        background:$green;
+        animation-name: animation3;
+    }
+}
+@include bounce(animation1, 100px);
+@include bounce(animation2, 200px);
+@include bounce(animation3, 300px);
+
 .U_66{
     width: 50px;
     height: 50px;
