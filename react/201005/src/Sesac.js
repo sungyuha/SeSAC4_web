@@ -7,7 +7,7 @@ function Sesac() {
     const [searchParams, setSearchParams] = useSearchParams();
     return (
         <div>
-            <h1>학생의 이름은 {name} 입니다.</h1>
+            <h1>학생의 이름은 <span>{name}</span> 입니다.</h1>
 
             <h1> {searchParams != "" && <p>실제 이름은 {searchParams.get("name")}</p>} </h1>
 
