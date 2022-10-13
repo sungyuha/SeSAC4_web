@@ -12,8 +12,8 @@ function Product() {
 
             <ul>
                 <li>hash : {location.hash}</li>
-                <li>pathname : {location.pathname}</li> {/* 경로 */}
-                <li>search : {location.search}</li> {/*  */}
+                <li>pathnames : {location.pathname}</li> {/* 경로 */}
+                <li>searchs : {location.search}</li> {/*  */}
                 <li>state : {location.state}</li> {/* 상태 값 */}
                 <li>key : {location.key}</li> {/* location 객체의 고유 값 / 페이지 고유 값 */}
             </ul>
