@@ -209,41 +209,52 @@ public class Main {
 		// 표준 배열보다 조금 느릴 수 있지만, 배열에서 많은 조작이 필요할 때 유용하게 사용되는 클래스
 		// 크기를 미리 정하지 않아도 되는 배열
 		
-		ArrayList<Integer> arrayList1 = new ArrayList<>();
-		ArrayList<Integer> arrayList2 = new ArrayList<>();
-		for( int i=0; i<10; i++ ) {
-			arrayList2.add(i);
-		}
+//		ArrayList<Integer> arrayList1 = new ArrayList<>();
+//		ArrayList<Integer> arrayList2 = new ArrayList<>();
+//		for( int i=0; i<10; i++ ) {
+//			arrayList2.add(i);
+//		}
 		//ArrayList<Dobule> arrayList2 = new ArrayList<>();
 		//ArrayList<String> arrayList3 = new ArrayList<>();
 		
-		arrayList1.add(1);
+		//arrayList1.add(1);
 		// [ 1 ]
-		arrayList1.add(2);
+		//arrayList1.add(2);
 		// [ 1, 2 ]
 		
-		arrayList1.add(0, 3);
+		//arrayList1.add(0, 3);
 		// [ 3, 1, 2 ] 
 		
-		arrayList1.addAll (arrayList2);
+		//arrayList1.addAll (arrayList2);
 		// [3,1,2,0,1,2..........,9]
 		
-		arrayList1.remove(2);
+		//arrayList1.remove(2);
 		// [3,1,0,1,2,....,9]
 		
-		arrayList1.clear();
+		//arrayList1.clear();
 		// [] -> 처음에는 빈 배열
 		
-		for (int i=0;i<arrayList1.size();i++) {
-			System.out.print(arrayList1.get(i) + " "); // 해당 인덱스에 해당하는 원소를 가져옴
-		}
+//		for (int i=0;i<arrayList1.size();i++) {
+//			System.out.print(arrayList1.get(i) + " "); // 해당 인덱스에 해당하는 원소를 가져옴
+//		}
 		
 //		for(int value : arrayList1) {
 //			System.out.print(value+ " ");
 //		}
 		
-		System.out.println("\n"+arrayList1.size());
-		System.out.println(arrayList1.indexOf(2));
+//		System.out.println("\n"+arrayList1.size());
+//		System.out.println(arrayList1.indexOf(2));
+		
+		// 반복문 - 실습3
+		Scanner scanner = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("숫자를 입력하세요.");
+			
+			for(int num=1; num<=10; num++) {
+				int num = scanner.nextInt(num+ " ");
+			}
+		}
 		
 	}
 
