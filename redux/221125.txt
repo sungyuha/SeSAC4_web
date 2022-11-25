@@ -7,4 +7,3 @@ Redux : 상태관리를 하는 라이브러리
 - Subscribe : Dispatch를 보내는 객체
 - Action : Dispatch를 통해 상태를 변경하는데 전달 되는 객체
 - Render : (dispatch가 store의 상태 변경을 유발하였을 경우) 리덕스는 모든 dispatch에 대해 모든 subscriber를 업데이트함
-

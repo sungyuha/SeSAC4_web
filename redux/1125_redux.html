@@ -35,43 +35,59 @@
                 let boards = Object.assign(state.boards);
                 boards.push(action.data);
                 return { cnt: state.cnt + 1, boards: boards};
+            } else  if ( action.type === 'DELETE' ) {
+                    let boards = Object.assign(state.boards);
+                    boards = boards.filter(board => board.no != action.no );
+                    return {cnt: state.cnt, boards };
+                }
             }
-        }
-        var store = Redux.createStore(reducer);
-        function writeBoard(){
-            let state = store.getState();
-            let data = {
-                no: state.cnt,
-                name : document.querySelector("#name").value,
-                content: document.querySelector("#content").value
+            var store = Redux.createStore(reducer);
+            function writeBoard(){
+                let state = store.getState();
+                let data = {
+                    no: state.cnt,
+                    name : document.querySelector("#name").value,
+                    content: document.querySelector("#content").value
+                }
+                
+                store.dispatch({type: 'WRITE', data: data});
             }
-            
-            store.dispatch({type: 'WRITE', data: data});
-        }
-        function deleteBoard(no){
-            var state = store.getState();
-            store.dispatch({type:'DELETE', no: no});
-        }
-        function getData(){ // 작성 버튼을 누르면 state에 boards가 들어가고 append 됨
-            var state = store.getState();
-            console.log(state);
-            var text = "";
-            for ( board of state.boards ) {
-                text +=
-                    `<tr>
-                        <td>${board.no}</td>
-                        <td>${board.name}</td>
-                        <td>${board.content}</td>
-                        <td>
-                            <button type="button" onclick="deleteBoard(${board.no});">삭제</button>
-                        </td>
-                    </tr>`;
+            function deleteBoard(no){
+                var state = store.getState();
+                store.dispatch({type:'DELETE', no: no});
             }
-            // 2개의 boards 가 존재한다면 <tr>~~<tr><tr>~~~</tr>
-            document.querySelector("#tbody").innerHTML = text;
-        }
-        store.subscribe(getData);
-        getData();
+            function getData(){
+                // 작성 버튼을 눌러 dispatch가 reducer까지 모두 실행한 후 state를 반환한 뒤 실행되는 함수
+                // getData의 동작 : reducer에서 반환된 바뀐 state를 가지고 tbody의 내용을 새롭게 쓰는 동작을 진행
+                var state = store.getState();
+                console.log(state);
+                var text = "";
+                /*
+                    for ( let i = 0; i < state.boards.length; i++ ){
+                        let board = state.boards[i];
+                    }
+
+                    for ( baord of state.boards ){
+
+                    }
+                */
+                
+                for ( board of state.boards ) {
+                    text +=
+                        `<tr>
+                            <td>${board.no}</td>
+                            <td>${board.name}</td>
+                            <td>${board.content}</td>
+                            <td>
+                                <button type="button" onclick="deleteBoard(${board.no});">삭제</button>
+                            </td>
+                        </tr>`;
+                }
+                // 2개의 boards 가 존재한다면 <tr>~~<tr><tr>~~~</tr>
+                document.querySelector("#tbody").innerHTML = text;
+            }
+            store.subscribe(getData);
+            getData();
     </script>
     </body>
 </html>

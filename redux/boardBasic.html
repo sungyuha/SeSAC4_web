@@ -31,6 +31,10 @@
                     let boards = Object.assign(state.boards);
                     boards.push(action.data);
                     return { cnt: state.cnt + 1, boards: boards};
+                } else  if ( action.type === 'DELETE' ) {
+                    let boards = Object.assign(state.boards);
+                    boards = boards.filter(board => board.no != action.no );
+                    return {cnt: state.cnt, boards };
                 }
             }
             var store = Redux.createStore(reducer);
