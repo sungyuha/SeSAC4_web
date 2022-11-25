@@ -1,9 +1,10 @@
 Redux : 상태관리를 하는 라이브러리
-- Store : 상태를 관리하는 하나의 공간
-- State : 
+- Store : 상태를 관리하는 하나의 공간 / 딱 하나만 만듬
+- State : 상태
 - getState : State를 접근할 수 있는 객체
 - Reducer: State를 값을 새롭게 변경하는 객체
 - Dispatch : 상태를 변경하기 위해 Action 객체를 받음. Reducer를 호출하는 객체. 
 - Subscribe : Dispatch를 보내는 객체
 - Action : Dispatch를 통해 상태를 변경하는데 전달 되는 객체
-- Render : 
+- Render : (dispatch가 store의 상태 변경을 유발하였을 경우) 리덕스는 모든 dispatch에 대해 모든 subscriber를 업데이트함
+
