@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+    </head>
+    
+    <body>
+        이름 : <input type="text" id="name"> <br />
+        내용 : <input type="text" id="content"> 
+        <input type="button" value="작성" onclick="writeBoard()">
+    
+        <hr>
+        
+        <table border="1" cellspacing="0" cellpadding="5" width="50%">
+            <tr>
+                <td>No.</td>
+                <td>이름</td>
+                <td>내용</td>
+                <td>삭제</td>
+            </tr>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+        
+        <script>
+            function reducer(state, action){
+                if ( state === undefined ) {
+                    return { cnt: 0, boards: [] };
+                }
+            }
+            var store = Redux.createStore(reducer);
+            function writeBoard(){
+                // 
+                store.dispatch({});
+            }
+            function deleteBoard(no){
+                
+            }
+            function getData(){
+                document.querySelector("#tbody").innerHTML = "";
+            }
+            store.subscribe(getData);
+            getData();
+        </script>
+    </body>
+</html>

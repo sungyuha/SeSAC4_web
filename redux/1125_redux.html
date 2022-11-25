@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+</head>
+<body>
+    <div>
+        이름 : <input type="text"  id="name">
+        <br />
+        내용 : <input type="text" id="content">
+        <button type="button" onclick="btn">작성</button>
+    <hr>
+    <table border="1" cellspacing="0" cellpadding="5" width="50%">
+        <tr>
+            <td>No.</td>
+            <td>이름</td>
+            <td>내용</td>
+            <td>삭제</td>
+        </tr>
+        <tbody id="tbody"></tbody>
+    </table>
+    </div>
+    
+    <script>
+        // function reducer(state, action) {
+            
+        // }
+        // var store = Redux.createStore(reducer);
+
+        function reducer(state, action){
+                if ( state === undefined ) {
+                    return { cnt: 0, boards: [] };
+                }
+            }
+            var store = Redux.createStore(reducer);
+            function writeBoard(){
+                // 
+                store.dispatch({});
+            }
+            function deleteBoard(no){
+                
+            }
+            function getData(){
+                document.querySelector("#tbody").innerHTML = "";
+            }
+            store.subscribe(getData);
+            getData();
+    </script>
+</body>
+</html>
