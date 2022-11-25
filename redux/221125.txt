@@ -7,3 +7,16 @@ Redux : 상태관리를 하는 라이브러리
 - Subscribe : Dispatch를 보내는 객체
 - Action : Dispatch를 통해 상태를 변경하는데 전달 되는 객체
 - Render : (dispatch가 store의 상태 변경을 유발하였을 경우) 리덕스는 모든 dispatch에 대해 모든 subscriber를 업데이트함
+
+Redux 흐름
+1. state를 가져올 때
+1) store의 getState() 함수를 실행시킨다.
+2) getState() 함수는 store 안의 state를 읽고 그 정보를 가져와 반환해준다.
+2. state를 변경할 때
+1) 사용자(클라이언트)는 store의 dispatch 함수를 실행시킨다.
+- 이때, dispatch 함수를 실행할 때 무엇을 변경할지, 어떻게 변경할지에 대한 정보를 전달하는데 그 객체가 'action' 이다.
+2) dispatch 함수는 action객체를 받고, reducer 함수를 실행시킨다.
+- reducer 함수는 2개의 인자를 받는데 첫번째는 현재 state, 두번째는 dispatch에서 전달한 action 객체이다.
+3) reducer 함수는 action 을 토대로 state를 변경한 후, 변경된 state를 반환해준다.
+4) reducer 함수가 종료되면 dispatch 함수는 subscribe 함수에 등록된 render 함수를 실행한다.
+5) render 함수는 state를 가져와 사용자에게 보여준다. ( case 1 과 동일하게 )
