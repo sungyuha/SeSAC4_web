@@ -1,0 +1,1 @@
+props 지옥을 막기위해 redux 사용
