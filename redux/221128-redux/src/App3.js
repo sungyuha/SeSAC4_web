@@ -2,10 +2,22 @@ import './App.css';
 import { useState } from 'react';
 import { createStore } from 'redux';
 import { Provider, useSelector, useDispatch } from 'react-redux';
+import PracticeDefault from "./PracticeDefault.js";
 import rootReducer from './store/rootReducer'
 
-const store = createStore(rootReducer);
-function App3() {
+function reducer(state, action) {
+  // state : 현재 상태의 state -> 아직 바뀌기 전
+  // action : dispatch를 실행할 때 넣었던 객체
+  if ( action.type === 'INCREASE' ){
+    return { number: state.number + 1 };
+  } else if ( action.type === 'DECREASE' ){
+    return { number: state.number - 1}
+  }
+  return { number: 1};
+}
+const store = createStore(reducer);
+
+function App() {
   return (
       <div id="app">
           <Provider store={store}>
@@ -39,17 +51,14 @@ const Box2 = () =>{
 const Box3 = () =>{
   console.log('Box3');
   const number = useSelector((state) => state.number);
-  const isData = useSelector((state) => state.isData);
   const dispatch = useDispatch()
   return (
     <div>
       <h4>Box3 컴포넌트 number : { number } </h4>
-      { isData? <h5> isData는 true</h5> : <h5>isData는 false</h5>}
       <input type="button" value="+" onClick={()=>{dispatch({type:'INCREASE'})}} />
       <input type="button" value="-" onClick={()=>{dispatch({type:'DECREASE'})}} />
-      <input type="button" value="change" onClick={()=>{dispatch({type:'CHANGE'})}} />
     </div>
   )
 }
 
-export default App3;
+export default App;
