@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { createStore } from 'redux';
 import { Provider, useSelector, useDispatch } from 'react-redux';
 
+function reducer(state, action) {
+  
+}
+
+const store = createStore(reducer);
+ 
 function PracticeDefault() {
   return (
     <div style={{textAlign: 'center'}}>

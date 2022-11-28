@@ -2,8 +2,8 @@ import './App.css';
 import { useState } from 'react';
 import { createStore } from 'redux';
 import { Provider, useSelector, useDispatch } from 'react-redux';
-import PracticeDefault from "./PracticeDefault.js";
-import rootReducer from './store/rootReducer'
+import PracticeDefault from './PracticeDefault';
+import rootReducer from './store/rootReducer';
 
 function reducer(state, action) {
   // state : 현재 상태의 state -> 아직 바뀌기 전
@@ -23,6 +23,7 @@ function App() {
           <Provider store={store}>
             <h1>number : {}</h1>
             <Box1/>
+            <PracticeDefault />
         </Provider>
       </div>
   );
