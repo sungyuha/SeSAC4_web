@@ -1,0 +1,78 @@
+Docker
+• Go 언어로 작성된 Linux 컨테이너 기반으로 하는 오픈소스 가상화 플랫폼
+• 애플리케이션 실행 환경을 코드로 작성할 수 있고, 하나의 Host OS를 공유해 사용할 수 있음
+
+Docker Daemon
+• Docker API 요청 수신, Image, Container, 네트워크와 같은 Docker 객체 및 Docker 서비스를 관리
+
+Docker Client
+• Docker 사용자가 Docker와 상호작용하기 위한 방법으로 기본적인 Docker 명령어를 통해 Docker Daemon과 통신
+• docker run 과 같은 명령어를 이용해 Docker을 실행 할 수 있음
+
+Docker Registry
+• Docker 이미지 저장
+• Docker Hub이라는 공용 Registry와 개인 private한 Registry에서 Docker 이미지를 관리
+• 일반적으로는 Docker Hub이라는 공용 Registry에서 실행
+
+Docker Image
+• 이미지 = 실행파일
+• 컨테이너 실행에 필요한 파일과 설정값 등을 포함하고 있는 것으로 Immutable(불변적)
+• 이미지는 Docker Hub에 저장되고, 그곳에서 다운받아 사용 할 수 있음
+
+*Docker 실행
+
+--Docker 실행 명령어 
+    docker pull node
+    docker images
+
+--Docker run 명령어
+    docker run 이미지이름
+    dockeer run --name 컨테이너이름 이미지 이름
+    docker rmi 이미지이름
+
+    docker stop 이름 (컨테이너ID)
+
+    docker start 이름 (컨테이너ID)
+
+    docker rm 이름 (컨테이너ID)
+
+    docker ps -a
+
+Dockerfile
+• 필요한 최소한의 패키지를 설치하고 동작하기 위한 자신만의 설정을 담고있는 파일
+• 즉, 기본 이미지가 아닌 기본 이미지를 바탕으로 설정이 담긴 이미지를 만들기 위해 사용하는 파일
+
+--Dockerfile 만들기
+    FROM mysql
+
+    // ENV는 환경설정
+    ENV MYSQL_ROOT_PASSWORD=1234 
+
+    EXPOSE 3309
+
+--Dockerfile로 이미지 만들기
+    docker build -t 이름 도커파일경로
+
+
+--Dockerfile 로 코드 실행
+    // Dockerfile
+    # 부모 이미지 지정
+    FROM node:16
+    # 작업 디렉토리 생성
+    WORKDIR /app
+
+    # 소스코드 추가 -> 현재 위치의 파일 / 컨테이너가 파일을 가져옴
+    COPY . /app
+
+    # 패키지 설치
+    RUN npm install
+
+    # 포트 매핑
+    EXPOSE 8000
+
+    # 실행 명령
+    CMD [ "node", "index.js" ]
+
+--Dockerfile 로 코드 실행2
+    docker build -t node-project .
+    docker run --name node-project -p 8080:8000 node-project
