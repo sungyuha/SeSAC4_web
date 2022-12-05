@@ -1,0 +1,20 @@
+version: "3.8" 
+services:
+  sesac-codingon:
+  # 경로 수정해야 함
+    volumes: 
+      - /app/node_modules
+      - ./backend/:/app/
+    build: 
+      context: ./backend
+    ports:
+      - "8000:8000"
+  node:
+    # 경로 수정해야 함
+    image: "node:16"
+    working_dir: /usr/src/app
+    volumes:
+      - ./backend/:/usr/src/app
+    ports:
+      - "8001:8000"
+    command: bash -c "npm install && node index"

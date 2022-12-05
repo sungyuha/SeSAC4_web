@@ -1,18 +1,27 @@
-version: "3.8"
+# 어떤 버젼으로 읽을 지. 현재는 3.8 버젼이 가장 안전
+version: "3.8" 
+# 컨테이너에 대한 이름
 services:
+  # 프론트엔드 
   sesac-codingon:
     volumes: 
       - /app/node_modules
       - ./:/app/
+    # build : 도커파일의 경로
     build: 
       context: .
     ports:
       - "8000:8000"
+  # node 는 백엔드 
+  # 기본 이미지 내용 및 칸테이너 내에서의 작업 디렉토리
   node:
     image: "node:16"
     working_dir: /usr/src/app
+    # 바인드 마운트
+    # : 을 기준으로 왼쪽이 호스트 / 오른쪽이 컨테이너
     volumes:
       - ./:/usr/src/app
     ports:
       - "8001:8000"
+    # bash -c을 붙여야 터미널에서 입력하는것처럼 실행
     command: bash -c "npm install && node index"
