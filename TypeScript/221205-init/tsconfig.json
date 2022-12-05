@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+    //  실행환경
+      "target": "ES6"
+    },
+    "include": ["*.ts"],
+    "exclude": ["node_modules"]
+}
