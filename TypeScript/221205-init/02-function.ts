@@ -54,7 +54,7 @@ interface PersonData {
     nickname?: string;
 }
 function getInfo2(obj: PersonData){
-    
+   
 }
 // getInfo(person);
 let person2:PersonData = {name: '코딩온', age:10};
