@@ -13,7 +13,7 @@ type Action = {
 
 const initState = { money: 0 };
 function reducer(state: State = initState, action:Action){
-  const newState = {...state};
+  const newState = {...state}; // 어딴 타입 값을 가져오든 상관없음
   if ( action.type === 'DEPOSIT' ) {
     newState.money += parseInt(action.money);
   } else if ( action.type === 'WITHDRAW' ) {
