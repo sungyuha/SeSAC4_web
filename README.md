@@ -11,4 +11,10 @@
     - 개요 : 같은 목표를 가지고 같이 공부할 사람을 찾는 웹사이트 구현 프로젝트<br/>
     - 순수 자바스크립트를 활용한 팀 프로젝트<br/>
     github: https://github.com/SeSAC43-Project/StudyWith
+    <br/><br/>
+* 개인프로젝트<br/>
+    1. react-ToDo (22.12.05 ~ 22.12.06)<br/>
+    - 개요 : 리액트를 활용한 투두(할일) 프로젝트<br/>
+    - React 기반 개인 프로젝트<br/>
+    github: https://github.com/JiHwaTeam/SubwayToilet<br/>
 </div>
