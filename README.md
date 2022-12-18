@@ -9,7 +9,7 @@
     <br/>
     2. StudyWith (22.08.17 ~ 22.09.01)<br/>
     - 개요 : 같은 목표를 가지고 같이 공부할 사람을 찾는 웹사이트 구현 프로젝트<br/>
-    - 순수 자바스크립트를 활용한 팀 프로젝트<br/>
+    - 바닐라 자바스크립트 & 제이쿼리를 활용한 팀 프로젝트<br/>
     github: https://github.com/SeSAC43-Project/StudyWith
     <br/><br/>
 * 개인프로젝트<br/>
