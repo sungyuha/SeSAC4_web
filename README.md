@@ -13,7 +13,7 @@
     github: https://github.com/sungyuha/StudyWith
     <br/><br/>
 * 개인프로젝트<br/>
-    1. react-ToDo (22.12.05 ~ )<br/>
+    1. react-ToDo (22.12.05 ~ 22.12.20)<br/>
     - 개요 : 리액트를 활용한 투두(할일) 프로젝트<br/>
     - React 기반 개인 프로젝트<br/>
     github: https://github.com/sungyuha/react-ToDo<br/>
